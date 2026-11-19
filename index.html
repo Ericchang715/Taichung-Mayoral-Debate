@@ -2421,9 +2421,16 @@
     // 9. Chart.js Visualizations (Grounded Data, Token Colors)
     // =========================================================
     function wrapMobileChartLabel(label) {
-      return window.matchMedia(`(max-width: 640px)`).matches
-        ? String(label).match(/.{1,7}/gu)
-        : label;
+      if (!window.matchMedia(`(max-width: 640px)`).matches) return label;
+      const lines = {
+        [`捷運與軌道建設`]: [`捷運與`, `軌道建設`],
+        [`公車・生活圈・快速道`]: [`公車・`, `生活圈・`, `快速道`],
+        [`國際機場與會展門戶`]: [`國際機場`, `與會展門戶`],
+        [`智慧產業轉型`]: [`智慧產業`, `轉型`],
+        [`社福育兒與人口對策`]: [`社福育兒`, `與人口對策`],
+        [`公安衛生與永續水資源`]: [`公安衛生與`, `永續水資源`]
+      };
+      return lines[label] || String(label).match(/.{1,5}/gu);
     }
 
     function formatBarChartLabel(value) {
@@ -2486,6 +2493,7 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: { padding: 8 },
           scales: {
             r: {
               min: 0,
