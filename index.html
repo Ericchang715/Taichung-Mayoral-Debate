@@ -631,15 +631,22 @@
       color: var(--on-surface);
       vertical-align: top;
     }
-    .policy-table tbody td {
+    .policy-table tbody td,
+    .policy-table tbody th {
       padding: var(--space-md);
       border-bottom: var(--row-border);
       vertical-align: top;
       font-size: 0.9375rem;
+      text-align: left;
+      font-weight: 400;
     }
-    .policy-table tbody tr:last-child td {
+    .policy-table tbody tr:last-child td,
+    .policy-table tbody tr:last-child th {
       border-bottom: none;
     }
+    .mobile-candidate-name,
+    .mobile-section-nav,
+    .mobile-hint { display: none; }
     .policy-table tbody tr:hover {
       background: var(--background);
     }
@@ -714,6 +721,7 @@
     }
     .chart-canvas-wrap {
       position: relative;
+      height: 320px;
       min-height: 320px;
       width: 100%;
     }
@@ -895,16 +903,137 @@
       }
     }
     @media (max-width: 640px) {
+      html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        scroll-padding-bottom: calc(80px + env(safe-area-inset-bottom));
+      }
+      body {
+        font-size: 1rem;
+        line-height: 1.75;
+        padding-bottom: calc(68px + env(safe-area-inset-bottom));
+      }
       .page-grid {
         padding: var(--space-md);
         gap: var(--space-lg);
       }
-      .figure-card, .cand-card, .inspector-card, .chart-card {
+      main > section { scroll-margin-top: 1rem; }
+      .title { font-size: 1.625rem; line-height: 1.4; }
+      .standfirst { font-size: 1rem; font-weight: 400; line-height: 1.8; }
+      .section-heading { font-size: 1.35rem; line-height: 1.5; }
+      .section-deck { font-size: 1rem; line-height: 1.75; }
+      .dossier-bar-left { gap: 0.4rem; }
+      .dossier-meta { line-height: 1.7; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+      .figure-card { padding: 0.75rem; }
+      .figure-card .value { font-size: 1.25rem; line-height: 1.4; }
+      .kpi-caption { font-size: 0.875rem; line-height: 1.7; }
+      .candidate-grid { grid-template-columns: 1fr; }
+      .cand-card, .inspector-card, .chart-card, .qa-card, .aside-box {
         padding: var(--space-md);
       }
-      .charts-grid {
-        grid-template-columns: 1fr;
+      .cand-summary, .cand-slogan, .stance-text, .inspector-sub { font-size: 1rem; }
+      .control-label { font-family: var(--font-body); font-size: 0.875rem; }
+      .control-group > .btn-group,
+      .filter-status-bar > .btn-group {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
       }
+      .btn { min-height: 48px; padding: 0.6rem 0.5rem; line-height: 1.5; }
+      .search-input { font-size: 1rem; min-height: 48px; padding-right: 3rem; }
+      .search-clear { min-width: 44px; min-height: 44px; right: 2px; }
+      .filter-status-bar { align-items: stretch; }
+      .corridor-pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .corridor-btn { min-height: 48px; font-size: 0.875rem; line-height: 1.5; }
+      .stance-head { flex-wrap: wrap; justify-content: flex-start; }
+      .stance-block { padding: 0.75rem; }
+      .svg-schematic-wrap {
+        display: block;
+        min-height: 0;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+      .transit-svg { min-width: 640px; }
+      .mobile-hint { display: block; font-size: 0.875rem; color: var(--on-surface-variant); }
+      .table-card { overflow: visible; border: 0; background: transparent; }
+      .policy-table { display: block; min-width: 0; }
+      .policy-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+      }
+      .policy-table tbody { display: grid; gap: 1rem; }
+      .policy-table tbody tr {
+        display: block;
+        border: var(--card-border);
+        border-radius: var(--rounded-lg);
+        background: var(--surface-container-low);
+      }
+      .policy-table tbody tr:hover { background: var(--surface-container-low); }
+      .policy-table tbody th {
+        display: block;
+        background: var(--surface-container);
+        border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+      }
+      .policy-table tbody td { display: block; font-size: 1rem; line-height: 1.8; }
+      .policy-table tbody td:last-child { border-bottom: 0; }
+      .policy-table tbody tr:last-child td:not(:last-child),
+      .policy-table tbody tr:last-child th { border-bottom: var(--row-border); }
+      .policy-table td[data-cand="ho"] { border-left: 4px solid var(--cand-ho); }
+      .policy-table td[data-cand="chiang"] { border-left: 4px solid var(--cand-chiang); }
+      .policy-table td[data-cand="hung"] { border-left: 4px solid var(--cand-hung); }
+      .mobile-candidate-name { display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; }
+      .policy-table td[data-cand="ho"] .mobile-candidate-name { color: var(--cand-ho); }
+      .policy-table td[data-cand="chiang"] .mobile-candidate-name { color: var(--cand-chiang); }
+      .policy-table td[data-cand="hung"] .mobile-candidate-name { color: var(--cand-hung); }
+      .charts-grid { grid-template-columns: 1fr; }
+      .chart-header > .btn-group { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+      .chart-title { font-size: 1.125rem; line-height: 1.6; }
+      .chart-canvas-wrap { height: 360px; }
+      .chart-canvas-wrap--bar { height: 480px; }
+      .qa-switcher { display: grid; grid-template-columns: 1fr; }
+      .qa-grid, .platform-grid, .clash-grid { grid-template-columns: 1fr; }
+      .qa-question-box { padding: 1rem; }
+      .qa-prompt { font-size: 1.05rem; line-height: 1.7; }
+      .mobile-section-nav {
+        position: fixed;
+        inset: auto 0 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        padding: 0 max(0.25rem, env(safe-area-inset-right)) env(safe-area-inset-bottom) max(0.25rem, env(safe-area-inset-left));
+        background: var(--surface-container-low);
+        border-top: var(--section-rule);
+        box-shadow: 0 -3px 18px #17181a0a;
+      }
+      .mobile-section-nav a {
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--on-surface);
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .mobile-section-nav a:active,
+      .mobile-section-nav a:focus-visible { background: var(--primary-container); }
+    }
+
+    @media (max-width: 359px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .mobile-section-nav, .mobile-hint { display: none; }
+      body { padding-bottom: 0; }
+      .svg-schematic-wrap { overflow: visible; }
+      .transit-svg { min-width: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -917,6 +1046,13 @@
   </style>
 </head>
 <body>
+  <nav class="mobile-section-nav" aria-label="頁面快速導覽">
+    <a href="#filters" aria-label="前往篩選工具">篩選</a>
+    <a href="#corridors" aria-label="前往交通走廊">交通</a>
+    <a href="#comparison" aria-label="前往政見對照">對照</a>
+    <a href="#charts" aria-label="前往數據圖表">圖表</a>
+    <a href="#questions" aria-label="前往提問交鋒">問答</a>
+  </nav>
   <main class="page-grid">
 
     <!-- 1. Masthead & Briefing Header -->
@@ -1044,7 +1180,7 @@
     </section>
 
     <!-- 4. Interactive Filter Bar -->
-    <section aria-label="互動篩選工具列">
+    <section id="filters" aria-label="互動篩選工具列">
       <div class="aside-box">
         <div class="controls-layout">
           <div class="control-group">
@@ -1053,10 +1189,10 @@
               篩選觀察對象（連動下方表格與政見卡片）
             </span>
             <div class="btn-group" role="group" aria-label="候選人篩選">
-              <button type="button" class="btn is-active" data-filter-cand="all" onclick="setCandidateFilter('all')">全部三人對照</button>
-              <button type="button" class="btn" data-filter-cand="ho" onclick="setCandidateFilter('ho')">1號 何欣純</button>
-              <button type="button" class="btn" data-filter-cand="chiang" onclick="setCandidateFilter('chiang')">3號 江啟臣</button>
-              <button type="button" class="btn" data-filter-cand="hung" onclick="setCandidateFilter('hung')">2號 洪麗華</button>
+              <button type="button" class="btn is-active" data-filter-cand="all" onclick="setCandidateFilter('all')" aria-pressed="true">全部三人對照</button>
+              <button type="button" class="btn" data-filter-cand="ho" onclick="setCandidateFilter('ho')" aria-pressed="false">1號 何欣純</button>
+              <button type="button" class="btn" data-filter-cand="chiang" onclick="setCandidateFilter('chiang')" aria-pressed="false">3號 江啟臣</button>
+              <button type="button" class="btn" data-filter-cand="hung" onclick="setCandidateFilter('hung')" aria-pressed="false">2號 洪麗華</button>
             </div>
           </div>
 
@@ -1066,12 +1202,12 @@
               政見領域篩選
             </span>
             <div class="btn-group" role="group" aria-label="領域篩選">
-              <button type="button" class="btn is-active" data-filter-topic="all" onclick="setTopicFilter('all')">全部議題</button>
-              <button type="button" class="btn" data-filter-topic="rail" onclick="setTopicFilter('rail')">捷運軌道</button>
-              <button type="button" class="btn" data-filter-topic="road" onclick="setTopicFilter('road')">公路與公車</button>
-              <button type="button" class="btn" data-filter-topic="gateway" onclick="setTopicFilter('gateway')">機場與門戶</button>
-              <button type="button" class="btn" data-filter-topic="economy" onclick="setTopicFilter('economy')">產業與財源</button>
-              <button type="button" class="btn" data-filter-topic="welfare" onclick="setTopicFilter('welfare')">社福・安全・人口</button>
+              <button type="button" class="btn is-active" data-filter-topic="all" onclick="setTopicFilter('all')" aria-pressed="true">全部議題</button>
+              <button type="button" class="btn" data-filter-topic="rail" onclick="setTopicFilter('rail')" aria-pressed="false">捷運軌道</button>
+              <button type="button" class="btn" data-filter-topic="road" onclick="setTopicFilter('road')" aria-pressed="false">公路與公車</button>
+              <button type="button" class="btn" data-filter-topic="gateway" onclick="setTopicFilter('gateway')" aria-pressed="false">機場與門戶</button>
+              <button type="button" class="btn" data-filter-topic="economy" onclick="setTopicFilter('economy')" aria-pressed="false">產業與財源</button>
+              <button type="button" class="btn" data-filter-topic="welfare" onclick="setTopicFilter('welfare')" aria-pressed="false">社福・安全・人口</button>
             </div>
           </div>
 
@@ -1103,7 +1239,7 @@
     </section>
 
     <!-- 5. Interactive Taichung Transit Corridor Schematic & Inspector -->
-    <section aria-labelledby="sec-corridor-map">
+    <section id="corridors" aria-labelledby="sec-corridor-map">
       <div class="dossier-bar">
         <div class="dossier-bar-left">
           <span class="dossier-pill">02｜空間走廊對照</span>
@@ -1142,7 +1278,8 @@
             </button>
           </div>
 
-          <div class="svg-schematic-wrap">
+          <p class="mobile-hint" id="map-mobile-hint">地圖可左右滑動，也可點選上方走廊名稱。</p>
+          <div class="svg-schematic-wrap" tabindex="0" role="region" aria-label="交通走廊地圖，可左右捲動">
             <svg class="transit-svg" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大臺中交通走廊互動示意圖">
               <!-- Subtle schematic geographic zones -->
               <rect x="14" y="14" width="612" height="392" rx="6" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="1" />
@@ -1234,7 +1371,7 @@
     </section>
 
     <!-- 6. Detailed Transportation Comparison Matrix -->
-    <section aria-labelledby="sec-matrix">
+    <section id="comparison" aria-labelledby="sec-matrix">
       <div class="dossier-bar">
         <div class="dossier-bar-left">
           <span class="dossier-pill">03｜交通政見對照矩陣</span>
@@ -1245,16 +1382,16 @@
       <p class="section-deck">表格隨上方「觀察對象」、「領域篩選」與「關鍵字搜尋」即時更新；開啟「標記核心差異點」可迅速鎖定三人主張的分歧所在。</p>
 
       <div class="table-card" id="matrix-container">
-        <table class="policy-table">
-          <thead>
-            <tr>
-              <th style="width: 17%;">比較維度</th>
-              <th data-col="ho" style="width: 28%;">1號 何欣純（發言 01）</th>
-              <th data-col="chiang" style="width: 28%;">3號 江啟臣（發言 02）</th>
-              <th data-col="hung" style="width: 27%;">2號 洪麗華（發言 03）</th>
+        <table class="policy-table" role="table" aria-labelledby="sec-matrix">
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader" style="width: 17%;">比較維度</th>
+              <th id="policy-cand-ho" scope="col" role="columnheader" data-col="ho" style="width: 28%;">1號 何欣純（發言 01）</th>
+              <th id="policy-cand-chiang" scope="col" role="columnheader" data-col="chiang" style="width: 28%;">3號 江啟臣（發言 02）</th>
+              <th id="policy-cand-hung" scope="col" role="columnheader" data-col="hung" style="width: 27%;">2號 洪麗華（發言 03）</th>
             </tr>
           </thead>
-          <tbody id="policy-table-body">
+          <tbody id="policy-table-body" role="rowgroup">
             <!-- Populated via JS -->
           </tbody>
         </table>
@@ -1267,7 +1404,7 @@
     </section>
 
     <!-- 7. Charts: Policy Emphasis & Quantitative Debate Figures -->
-    <section aria-labelledby="sec-charts">
+    <section id="charts" aria-labelledby="sec-charts">
       <div class="dossier-bar">
         <div class="dossier-bar-left">
           <span class="dossier-pill">04｜數據與議題比重</span>
@@ -1275,7 +1412,7 @@
         </div>
       </div>
       <h2 id="sec-charts" class="section-heading">候選人政策重心結構與關鍵數據視圖</h2>
-      <p class="section-deck">左側整理三位候選人於 25 分鐘發言中明確闡述的六大施政維度著墨深度；右側可切換檢視辯論會中被引用的「交通財政金額」與「人口／場館規模」數據。</p>
+      <p class="section-deck">雷達圖整理三位候選人於 25 分鐘發言中明確闡述的六大施政維度著墨深度；長條圖可切換檢視辯論會中被引用的「交通財政金額」與「人口／場館規模」數據。</p>
       <p id="chart-status" class="section-deck" role="status" hidden>圖表暫時無法顯示，請重新整理頁面。政見對照表與篩選功能仍可使用。</p>
 
       <div class="charts-grid">
@@ -1299,11 +1436,11 @@
               <p class="chart-sub" id="bar-chart-sub">依候選人於辯論會現場明確陳述之預算／經費數字對照</p>
             </div>
             <div class="btn-group" role="group" aria-label="切換數據視圖">
-              <button type="button" class="btn is-active" data-chart-mode="budget" onclick="switchBarChart('budget')">交通經費規模</button>
-              <button type="button" class="btn" data-chart-mode="scale" onclick="switchBarChart('scale')">人口與場館數據</button>
+              <button type="button" class="btn is-active" data-chart-mode="budget" onclick="switchBarChart('budget')" aria-pressed="true">交通經費規模</button>
+              <button type="button" class="btn" data-chart-mode="scale" onclick="switchBarChart('scale')" aria-pressed="false">人口與場館數據</button>
             </div>
           </div>
-          <div class="chart-canvas-wrap">
+          <div class="chart-canvas-wrap chart-canvas-wrap--bar">
             <canvas id="barChart" aria-label="辯論會提及關鍵數據長條圖"></canvas>
           </div>
           <p class="chart-note" id="bar-chart-note">數據來源皆出自候選人逐字稿口述：何欣純引述藍線 900→1,600+ 億及 1,300 億缺口；江啟臣引述東豐快/國4近 500 億、公車年補貼 26–27 億與免費增額 0.65 億、校舍每年增編 10 億。</p>
@@ -1312,7 +1449,7 @@
     </section>
 
     <!-- 8. Q&A Cross-Examination Explorer -->
-    <section aria-labelledby="sec-qa">
+    <section id="questions" aria-labelledby="sec-qa">
       <div class="dossier-bar">
         <div class="dossier-bar-left">
           <span class="dossier-pill">05｜第二階段提問交鋒</span>
@@ -1915,6 +2052,12 @@
       activeBarMode: `budget`
     };
 
+    const CANDIDATE_LABELS = {
+      ho: `1號 何欣純`,
+      chiang: `3號 江啟臣`,
+      hung: `2號 洪麗華`
+    };
+
     let radarChartInstance = null;
     let barChartInstance = null;
 
@@ -2039,7 +2182,7 @@
       tableCard.style.display = ``;
       emptyBox.classList.remove(`is-visible`);
 
-      const rowsHtml = filteredRows.map(function (row) {
+      const rowsHtml = filteredRows.map(function (row, rowIndex) {
         function buildCell(candKey, data) {
           if (!candMatchesFilter(candKey)) return ``;
           const itemsHtml = data.items.map(function (item) {
@@ -2049,7 +2192,8 @@
             return `<li>${cleanItem}</li>`;
           }).join(``);
           return `
-            <td>
+            <td role="cell" data-cand="${candKey}" headers="policy-row-${rowIndex} policy-cand-${candKey}">
+              <span class="mobile-candidate-name" aria-hidden="true">${CANDIDATE_LABELS[candKey]}</span>
               <span class="cell-lead">${data.lead}</span>
               <ul class="cell-list">${itemsHtml}</ul>
             </td>
@@ -2057,11 +2201,11 @@
         }
 
         return `
-          <tr>
-            <td>
+          <tr role="row">
+            <th scope="row" role="rowheader" id="policy-row-${rowIndex}">
               <div class="row-dim-title">${row.title}</div>
               <span class="row-dim-cat">${row.cat}</span>
-            </td>
+            </th>
             ${buildCell(`ho`, row.ho)}
             ${buildCell(`chiang`, row.chiang)}
             ${buildCell(`hung`, row.hung)}
@@ -2212,7 +2356,9 @@
     function setCandidateFilter(candKey) {
       appState.candFilter = candKey;
       document.querySelectorAll(`[data-filter-cand]`).forEach(function (btn) {
-        btn.classList.toggle(`is-active`, btn.dataset.filterCand === candKey);
+        const selected = btn.dataset.filterCand === candKey;
+        btn.classList.toggle(`is-active`, selected);
+        btn.setAttribute(`aria-pressed`, String(selected));
       });
       updateCandidateCardDimming();
       selectCorridor(appState.activeCorridor);
@@ -2225,7 +2371,9 @@
     function setTopicFilter(topicKey) {
       appState.topicFilter = topicKey;
       document.querySelectorAll(`[data-filter-topic]`).forEach(function (btn) {
-        btn.classList.toggle(`is-active`, btn.dataset.filterTopic === topicKey);
+        const selected = btn.dataset.filterTopic === topicKey;
+        btn.classList.toggle(`is-active`, selected);
+        btn.setAttribute(`aria-pressed`, String(selected));
       });
       renderMatrix();
       renderPlatformCards();
@@ -2272,6 +2420,19 @@
     // =========================================================
     // 9. Chart.js Visualizations (Grounded Data, Token Colors)
     // =========================================================
+    function wrapMobileChartLabel(label) {
+      return window.matchMedia(`(max-width: 640px)`).matches
+        ? String(label).match(/.{1,7}/gu)
+        : label;
+    }
+
+    function formatBarChartLabel(value) {
+      const label = this.getLabelForValue(value);
+      return window.matchMedia(`(max-width: 640px)`).matches
+        ? label.replace(/（/u, `\n（`).split(`\n`)
+        : label;
+    }
+
     function initRadarChart() {
       const canvas = document.getElementById(`radarChart`);
       if (!canvas || !canRenderCharts()) return;
@@ -2338,7 +2499,8 @@
               angleLines: { color: gridColor },
               pointLabels: {
                 color: ink,
-                font: { size: 12, weight: `600` }
+                font: { size: 12, weight: `600` },
+                callback: wrapMobileChartLabel
               }
             }
           },
@@ -2355,7 +2517,9 @@
     function switchBarChart(mode) {
       appState.activeBarMode = mode;
       document.querySelectorAll(`[data-chart-mode]`).forEach(function (btn) {
-        btn.classList.toggle(`is-active`, btn.dataset.chartMode === mode);
+        const selected = btn.dataset.chartMode === mode;
+        btn.classList.toggle(`is-active`, selected);
+        btn.setAttribute(`aria-pressed`, String(selected));
       });
 
       const canvas = document.getElementById(`barChart`);
@@ -2410,7 +2574,11 @@
               },
               y: {
                 grid: { display: false },
-                ticks: { color: ink, font: { size: 11 } }
+                ticks: {
+                  color: ink,
+                  font: { size: 12 },
+                  callback: formatBarChartLabel
+                }
               }
             },
             plugins: {
@@ -2454,7 +2622,11 @@
               },
               y: {
                 grid: { display: false },
-                ticks: { color: ink, font: { size: 11 } }
+                ticks: {
+                  color: ink,
+                  font: { size: 12 },
+                  callback: formatBarChartLabel
+                }
               }
             },
             plugins: {
