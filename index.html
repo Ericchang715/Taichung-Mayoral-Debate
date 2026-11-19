@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="dashboard">
+  <meta name="design-style" content="briefing">
+  <title>臺中市長政見辯論會｜交通政見與核心政見互動對照簡報</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=YCFBOwIe4l7xG3fCC4G3kx_A9HgV6hNMalaoKu9CB4apkZKXTvL0s4qZnfqCX2xSy9JSe8W9-zbMIio3m0GWydlFJB9BRjJ4zaUAtkhrIgAj4hI7LBSTqtUZLu3g-8WrAUC6Z263yzg8NiZBs1lKTXfnnhE6CQNZZEXcoehGdI8R8iUcpKxJvONqKwQKWkxE1JaYUCMvJqG26mQC-fKVaor8tDozy5wp9lkTHEsrGNU9v3-X68Eq1XXg40WQW-iT9H9HndEE5AVVUPvpUAFwsYEKwjD1rdydwOAwH5NUNz0dj-lnCvNLOnOtGMlo2RC9qc3_b_8m8i4aGasM52olU3v2GXiqfSxX4kGsmbLhLFIdKCyYKXDytwvpwJTu8Tidg5XhuK6hnc-g5tYIXUvl-ckDxunwlDb4DJDVZfoBkHRI0oRKWoz8wlnI-XJM6zCitQCFzOn4r3CutxZJ9g67fzM6RnECt5asOkRea6Dhyb-RwplHhZCRaLLwixXMI1Z2emxyJuiKHYeSUMzq3lt7Y6ZaCCESyirdZaTrnj_EWPA" charset="UTF-8"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces: warm stone-white paper */
+      --background: #faf9f5;
+      --surface-container-low: #ffffff;
+      --surface-container: #f1efe8;
+      --surface-container-high: #e6e2d6;
+
+      /* Ink */
+      --on-surface: #17181a;
+      --on-surface-variant: #56585c;
+
+      /* Rules */
+      --outline: #17181a;
+      --outline-variant: #dedad0;
+      --border-subtle: #c8c4b8;
+
+      /* Accents */
+      --primary: #17181a;
+      --on-primary: #faf9f5;
+      --primary-container: #f2b705;
+      --on-primary-container: #17181a;
+      --secondary: #1f4e5f;
+      --tertiary: #785008;
+      --tag-wash: #f5e6c4;
+      --error: #b42318;
+      --on-error: #ffffff;
+
+      /* Data series & candidate voices (Briefing palette) */
+      --data-1: #1f4e5f;
+      --data-2: #d99000;
+      --data-3: #2b6e52;
+      --data-4: #b84a39;
+      --data-context: #c4bfb2;
+
+      /* Candidate semantic accents (all >= 4.5:1 on white/stone) */
+      --cand-ho: #2b6e52;
+      --cand-ho-wash: #ebf4ef;
+      --cand-chiang: #1f4e5f;
+      --cand-chiang-wash: #eaf1f4;
+      --cand-hung: #785008;
+      --cand-hung-wash: #f7efe0;
+
+      /* Transit corridor schematic colors */
+      --transit-blue: #1f4e5f;
+      --transit-green: #2b6e52;
+      --transit-amber: #d99000;
+      --transit-brick: #b84a39;
+      --transit-rail: #56585c;
+
+      /* Shared semantic tokens */
+      --positive: #2b6e52;
+      --warning: #785008;
+      --focus: #1f4e5f;
+
+      /* Fonts (non-Latin first) */
+      --font-headline: 'Noto Serif TC', 'Source Serif 4', serif;
+      --font-body: 'Noto Sans TC', 'Plus Jakarta Sans', sans-serif;
+      --font-label: 'Geist Mono', 'Noto Sans TC', monospace;
+
+      /* Type scale (Dashboard / Data Explorer) */
+      --display-size: clamp(1.75rem, 1.35rem + 1.4vw, 2.35rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.55vw, 1.55rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Shape */
+      --rounded: 0.25rem;
+      --rounded-lg: 0.375rem;
+      --badge-radius: 2px;
+
+      /* Style effects */
+      --section-rule: 1.5px solid var(--outline);
+      --card-border: 1px solid var(--outline-variant);
+      --row-border: 1px solid var(--outline-variant);
+      --heading-tracking: 0;
+      --label-tracking: 0.06em;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+    h1, h2, h3, h4, p, ul, ol { margin-top: 0; }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-xl);
+      padding: var(--space-lg);
+      max-width: 1240px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Briefing Dossier Section Bar */
+    .dossier-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: var(--section-rule);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .dossier-bar-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .dossier-pill {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--badge-radius);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .dossier-meta {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Editorial Masthead */
+    .masthead {
+      padding-top: var(--space-xs);
+    }
+    .title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: var(--display-size);
+      line-height: 1.18;
+      letter-spacing: var(--heading-tracking);
+      color: var(--on-surface);
+      margin-bottom: var(--space-sm);
+    }
+    .standfirst {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: var(--subhead-size);
+      line-height: 1.5;
+      color: var(--secondary);
+      max-width: 72ch;
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: var(--headline-size);
+      line-height: 1.25;
+      color: var(--on-surface);
+      margin-bottom: var(--space-xs);
+    }
+    .section-deck {
+      font-size: var(--body-size);
+      color: var(--on-surface-variant);
+      max-width: 70ch;
+      margin-bottom: var(--space-md);
+    }
+
+    /* Figure Cards */
+    .figure-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .figure-card .value {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.8rem);
+      line-height: 1.2;
+      font-variant-numeric: lining-nums tabular-nums;
+      color: var(--on-surface);
+      margin: var(--space-xs) 0;
+    }
+    .index-num {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      color: var(--secondary);
+      letter-spacing: var(--label-tracking);
+    }
+
+    /* Top KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .kpi-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xs);
+    }
+    .kpi-caption {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin-bottom: 0;
+    }
+
+    /* Candidate Overview Cards */
+    .candidate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .cand-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-top: 4px solid var(--outline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .cand-card[data-cand="ho"] { border-top-color: var(--cand-ho); }
+    .cand-card[data-cand="chiang"] { border-top-color: var(--cand-chiang); }
+    .cand-card[data-cand="hung"] { border-top-color: var(--cand-hung); }
+    .cand-card.is-dimmed {
+      opacity: 0.42;
+      background: var(--surface-container);
+    }
+    .cand-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+    .cand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--badge-radius);
+    }
+    .cand-badge--ho { background: var(--cand-ho-wash); color: var(--cand-ho); }
+    .cand-badge--chiang { background: var(--cand-chiang-wash); color: var(--cand-chiang); }
+    .cand-badge--hung { background: var(--cand-hung-wash); color: var(--cand-hung); }
+
+    .cand-name {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.375rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .cand-slogan {
+      font-weight: 600;
+      color: var(--secondary);
+      font-size: 0.9375rem;
+      margin: 0;
+    }
+    .cand-summary {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: auto;
+      padding-top: var(--space-xs);
+    }
+    .tag-chip {
+      background: var(--surface-container);
+      color: var(--on-surface);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.18rem 0.5rem;
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline-variant);
+    }
+    .tag-chip--warm {
+      background: var(--tag-wash);
+      color: var(--tertiary);
+      border-color: transparent;
+    }
+
+    /* Filter / Control Panel */
+    .aside-box {
+      background: var(--surface-container);
+      border-top: var(--section-rule);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .controls-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.4fr) minmax(200px, 0.9fr);
+      gap: var(--space-md);
+      align-items: end;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .control-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      color: var(--on-surface);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .btn {
+      min-height: 44px;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--rounded);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      border: 1px solid var(--border-subtle);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .btn:hover {
+      background: var(--surface-container-high);
+    }
+    .btn.is-active {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+    .btn--gold.is-active {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      border-color: var(--outline);
+    }
+    .search-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 0.45rem 2.25rem 0.45rem 0.75rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--rounded);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      font-size: 0.9375rem;
+    }
+    .search-clear {
+      position: absolute;
+      right: 0.35rem;
+      min-width: 34px;
+      min-height: 34px;
+      border: none;
+      background: transparent;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--rounded);
+    }
+    .search-clear:hover {
+      background: var(--surface-container);
+      color: var(--on-surface);
+    }
+    .filter-status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+      padding-top: var(--space-sm);
+      border-top: var(--row-border);
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Interactive Transit Corridor Map + Inspector */
+    .transit-workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .map-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+    }
+    .corridor-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-md);
+    }
+    .corridor-btn {
+      min-height: 44px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline-variant);
+      background: var(--background);
+      color: var(--on-surface);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .corridor-btn:hover {
+      background: var(--surface-container);
+    }
+    .corridor-btn.is-active {
+      background: var(--secondary);
+      color: var(--on-primary);
+      border-color: var(--secondary);
+    }
+    .corridor-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .corridor-dot--blue { background: var(--transit-blue); }
+    .corridor-dot--green { background: var(--transit-green); }
+    .corridor-dot--amber { background: var(--transit-amber); }
+    .corridor-dot--brick { background: var(--transit-brick); }
+    .corridor-dot--rail { background: var(--transit-rail); }
+    .corridor-btn.is-active .corridor-dot {
+      background: var(--primary-container);
+    }
+
+    .svg-schematic-wrap {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded);
+      padding: var(--space-sm);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .transit-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .svg-node {
+      cursor: pointer;
+    }
+    .svg-node-ring {
+      fill: var(--surface-container-low);
+      stroke: var(--on-surface);
+      stroke-width: 2.5;
+      transition: transform var(--dur-micro) var(--ease-out);
+    }
+    .svg-node.is-active .svg-node-ring {
+      fill: var(--primary-container);
+      stroke: var(--on-surface);
+      stroke-width: 3;
+    }
+    .svg-node-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      fill: var(--on-surface);
+    }
+    .svg-zone-label {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 600;
+      fill: var(--on-surface-variant);
+    }
+
+    /* Inspector Panel */
+    .inspector-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .inspector-header {
+      border-bottom: var(--section-rule);
+      padding-bottom: var(--space-sm);
+    }
+    .inspector-title {
+      font-family: var(--font-headline);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: var(--space-xs) 0 0.25rem;
+    }
+    .inspector-sub {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+    .stance-block {
+      border-left: 4px solid var(--outline-variant);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--background);
+      border-radius: 0 var(--rounded) var(--rounded) 0;
+    }
+    .stance-block--ho { border-left-color: var(--cand-ho); }
+    .stance-block--chiang { border-left-color: var(--cand-chiang); }
+    .stance-block--hung { border-left-color: var(--cand-hung); }
+    .stance-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xs);
+    }
+    .stance-cand {
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+    .stance-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.1rem 0.45rem;
+      border-radius: var(--badge-radius);
+      background: var(--surface-container);
+      color: var(--on-surface-variant);
+    }
+    .stance-text {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: var(--on-surface);
+    }
+
+    /* Comparison Table */
+    .table-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      overflow-x: auto;
+    }
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+    .policy-table thead th {
+      text-align: left;
+      padding: var(--space-md);
+      background: var(--surface-container);
+      border-bottom: var(--section-rule);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--on-surface);
+      vertical-align: top;
+    }
+    .policy-table tbody td {
+      padding: var(--space-md);
+      border-bottom: var(--row-border);
+      vertical-align: top;
+      font-size: 0.9375rem;
+    }
+    .policy-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .policy-table tbody tr:hover {
+      background: var(--background);
+    }
+    .row-dim-title {
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: var(--space-xs);
+    }
+    .row-dim-cat {
+      display: inline-block;
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--tertiary);
+      background: var(--tag-wash);
+      padding: 0.1rem 0.45rem;
+      border-radius: var(--badge-radius);
+    }
+    .cell-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .cell-lead {
+      font-weight: 700;
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .diff-highlight {
+      background: var(--tag-wash);
+      padding: 0.08rem 0.25rem;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    /* Charts Section */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+    .chart-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .chart-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+    .chart-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.1875rem;
+      margin: 0;
+    }
+    .chart-sub {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      margin: 0.2rem 0 0;
+    }
+    .chart-canvas-wrap {
+      position: relative;
+      min-height: 320px;
+      width: 100%;
+    }
+    .chart-note {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      border-top: var(--row-border);
+      padding-top: var(--space-sm);
+      margin: 0;
+    }
+
+    /* Q&A Cross-Examination Explorer */
+    .qa-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .qa-question-box {
+      background: var(--surface-container);
+      border-left: 4px solid var(--primary-container);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
+      margin-bottom: var(--space-md);
+    }
+    .qa-asker {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: var(--space-xs);
+    }
+    .qa-prompt {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin: 0;
+      color: var(--on-surface);
+    }
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .qa-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .qa-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-xs);
+      border-bottom: var(--row-border);
+      padding-bottom: var(--space-xs);
+    }
+    .qa-three-words {
+      background: var(--surface-container);
+      padding: var(--space-sm);
+      border-radius: var(--rounded);
+      font-size: 0.875rem;
+      margin-top: auto;
+    }
+
+    /* Key Platform Explorer Cards */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .platform-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .platform-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: var(--row-border);
+      padding-bottom: var(--space-sm);
+    }
+    .platform-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin: 0;
+    }
+    .platform-item {
+      padding: var(--space-xs) 0;
+      border-bottom: 1px dashed var(--outline-variant);
+    }
+    .platform-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .platform-cand-tag {
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-right: 0.35rem;
+    }
+    .platform-cand-tag--ho { color: var(--cand-ho); }
+    .platform-cand-tag--chiang { color: var(--cand-chiang); }
+    .platform-cand-tag--hung { color: var(--cand-hung); }
+
+    /* Debate Clash / Commitments Strip */
+    .clash-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .clash-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .clash-topic {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      margin: var(--space-xs) 0 var(--space-sm);
+    }
+    .quote-line {
+      font-size: 0.9375rem;
+      padding-left: var(--space-sm);
+      border-left: 2px solid var(--outline-variant);
+      margin-bottom: var(--space-sm);
+    }
+    .quote-line:last-child { margin-bottom: 0; }
+
+    /* Empty state */
+    .empty-state {
+      background: var(--surface-container);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      display: none;
+    }
+    .empty-state.is-visible { display: block; }
+
+    /* Footer */
+    .sources-footer {
+      border-top: var(--section-rule);
+      padding-top: var(--space-md);
+      padding-bottom: var(--space-xl);
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    /* Container queries for dense cards */
+    .card-wrapper { container-type: inline-size; }
+    @container (max-width: 420px) {
+      .cand-header { flex-direction: column; }
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 960px) {
+      .controls-layout {
+        grid-template-columns: 1fr;
+      }
+      .transit-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .page-grid {
+        padding: var(--space-md);
+        gap: var(--space-lg);
+      }
+      .figure-card, .cand-card, .inspector-card, .chart-card {
+        padding: var(--space-md);
+      }
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-grid">
+
+    <!-- 1. Masthead & Briefing Header -->
+    <header class="masthead">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">政見簡報｜POLICY BRIEFING</span>
+          <span class="dossier-meta">第五屆臺中市長公辦電視政見辯論會・LIVE 逐字稿結構化對照</span>
+        </div>
+        <span class="dossier-meta">投票日：115年（2026）11月28日 08:00–16:00</span>
+      </div>
+      <h1 class="title">臺中市長政見辯論會：三大候選人交通藍圖與核心政見對照</h1>
+      <p class="standfirst">
+        全面梳理何欣純、江啟臣、洪麗華於公辦電視政見辯論會之「政見申論」、「兩輪專家提問」與「結論」交鋒內容，聚焦軌道建設、公車生活圈改革、聯外快速道路、臺中國際機場門戶及財政優先順序。
+      </p>
+    </header>
+
+    <!-- 2. Top-line KPI Summary Cards -->
+    <section aria-label="辯論會核心摘要指標">
+      <div class="kpi-grid">
+        <article class="figure-card">
+          <div class="kpi-label-row">
+            <span class="index-num">01 / DEBATE FORMAT</span>
+            <i data-lucide="clock" aria-hidden="true" width="16" height="16"></i>
+          </div>
+          <div class="value">25 分鐘／人</div>
+          <p class="kpi-caption">申論 10 分＋兩輪發問回答各 5 分＋結論 5 分；11 月 24 日 18:00 重播。</p>
+        </article>
+
+        <article class="figure-card">
+          <div class="kpi-label-row">
+            <span class="index-num">02 / 何欣純焦點數字</span>
+            <i data-lucide="train-front" aria-hidden="true" width="16" height="16"></i>
+          </div>
+          <div class="value">1,300 億元缺口</div>
+          <p class="kpi-caption">指藍線經費自 900 多億增至 1,600 多億且仍有缺口，主張中央地方合作加速動工並闢建 74 號外第二環線。</p>
+        </article>
+
+        <article class="figure-card">
+          <div class="kpi-label-row">
+            <span class="index-num">03 / 江啟臣焦點數字</span>
+            <i data-lucide="bus" aria-hidden="true" width="16" height="16"></i>
+          </div>
+          <div class="value">20 分鐘生活圈</div>
+          <p class="kpi-caption">劃分山、海、屯、市、烏日高鐵五大生活圈；公車現年補貼 26–27 億，再加 6–7 千萬即可真正免費。</p>
+        </article>
+
+        <article class="figure-card">
+          <div class="kpi-label-row">
+            <span class="index-num">04 / 洪麗華焦點數字</span>
+            <i data-lucide="users" aria-hidden="true" width="16" height="16"></i>
+          </div>
+          <div class="value">8,000 人 vs 27 萬</div>
+          <p class="kpi-caption">指臺中今年國小生僅約 8 千人、面臨 11 萬退休潮，主張優先搶救少子化（二胎起市府養）並查明清水捷運進度。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Candidate Profiles -->
+    <section aria-labelledby="sec-candidates">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">01｜候選人總覽</span>
+          <span class="dossier-meta">請留意「選舉號次」與辯論會「抽籤發言順序」之差異</span>
+        </div>
+      </div>
+      <h2 id="sec-candidates" class="section-heading">三位市長候選人定位與交通核心主張</h2>
+      <p class="section-deck">依辯論會現場抽籤發言順位（何欣純 → 江啟臣 → 洪麗華）呈現各候選人主訴求與關鍵政見標籤。</p>
+
+      <div class="candidate-grid">
+        <article class="cand-card card-wrapper" data-cand="ho">
+          <div class="cand-header">
+            <div>
+              <span class="cand-badge cand-badge--ho">選舉 1 號｜發言順位 01</span>
+              <h3 class="cand-name">何欣純</h3>
+            </div>
+            <i data-lucide="compass" aria-hidden="true" width="20" height="20"></i>
+          </div>
+          <p class="cand-slogan">「三個第一與一個大機場・新臺中首都格局」</p>
+          <p class="cand-summary">強調走遍大臺中 29 區 625 里，主張交通建設效率拚第一：藍線實質動工、74 號智慧控管＋第二環線、公車全面盤點、臺中國際機場擴建航班倍增，並以中央地方合作爭取最大財源。</p>
+          <div class="tag-row">
+            <span class="tag-chip">捷運藍綠橘紫紅齊推</span>
+            <span class="tag-chip">74號第二環線</span>
+            <span class="tag-chip">海線雙軌高架化</span>
+            <span class="tag-chip tag-chip--warm">六星社福・不舉債普發現金</span>
+          </div>
+        </article>
+
+        <article class="cand-card card-wrapper" data-cand="chiang">
+          <div class="cand-header">
+            <div>
+              <span class="cand-badge cand-badge--chiang">選舉 3 號｜發言順位 02</span>
+              <h3 class="cand-name">江啟臣</h3>
+            </div>
+            <i data-lucide="layers" aria-hidden="true" width="20" height="20"></i>
+          </div>
+          <p class="cand-slogan">「12345 臺中更幸福・國際化、智慧化、永續化」</p>
+          <p class="cand-summary">提出旗艦城市治理藍圖，強調「市長最重要的事是幫市民省下時間」：在捷運多線完工前，以 GIS/AI 盤點五大 20 分鐘生活圈與公車徹底改革；施政排序為安全第一、健康優先、賺錢省時。</p>
+          <div class="tag-row">
+            <span class="tag-chip">五大20分鐘生活圈</span>
+            <span class="tag-chip">公車準點改革＋免費</span>
+            <span class="tag-chip">藍線完工他線開工</span>
+            <span class="tag-chip tag-chip--warm">會展168・機器人製造之都</span>
+          </div>
+        </article>
+
+        <article class="cand-card card-wrapper" data-cand="hung">
+          <div class="cand-header">
+            <div>
+              <span class="cand-badge cand-badge--hung">選舉 2 號｜發言順位 03</span>
+              <h3 class="cand-name">洪麗華</h3>
+            </div>
+            <i data-lucide="shield-alert" aria-hidden="true" width="20" height="20"></i>
+          </div>
+          <p class="cand-slogan">「搶救少子化危機・守護勞保退休金」</p>
+          <p class="cand-summary">主張所有建設前須先解決人口危機，質疑新生兒驟減下興建硬體之迫切性；交通方面要求清查「捷運清水計畫」延宕內幕並改革後再施作，並主張第二胎起由市府撫養至國中、檢討小校關閉與重視水資源安全。</p>
+          <div class="tag-row">
+            <span class="tag-chip">清查捷運清水計畫</span>
+            <span class="tag-chip">檢視軌道建設迫切性</span>
+            <span class="tag-chip">二胎起市府養至國中</span>
+            <span class="tag-chip tag-chip--warm">水庫重建・經濟提升30%</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Filter Bar -->
+    <section aria-label="互動篩選工具列">
+      <div class="aside-box">
+        <div class="controls-layout">
+          <div class="control-group">
+            <span class="control-label">
+              <i data-lucide="user-check" aria-hidden="true" width="14" height="14"></i>
+              篩選觀察對象（連動下方表格與政見卡片）
+            </span>
+            <div class="btn-group" role="group" aria-label="候選人篩選">
+              <button type="button" class="btn is-active" data-filter-cand="all" onclick="setCandidateFilter('all')">全部三人對照</button>
+              <button type="button" class="btn" data-filter-cand="ho" onclick="setCandidateFilter('ho')">1號 何欣純</button>
+              <button type="button" class="btn" data-filter-cand="chiang" onclick="setCandidateFilter('chiang')">3號 江啟臣</button>
+              <button type="button" class="btn" data-filter-cand="hung" onclick="setCandidateFilter('hung')">2號 洪麗華</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">
+              <i data-lucide="sliders-horizontal" aria-hidden="true" width="14" height="14"></i>
+              政見領域篩選
+            </span>
+            <div class="btn-group" role="group" aria-label="領域篩選">
+              <button type="button" class="btn is-active" data-filter-topic="all" onclick="setTopicFilter('all')">全部議題</button>
+              <button type="button" class="btn" data-filter-topic="rail" onclick="setTopicFilter('rail')">捷運軌道</button>
+              <button type="button" class="btn" data-filter-topic="road" onclick="setTopicFilter('road')">公路與公車</button>
+              <button type="button" class="btn" data-filter-topic="gateway" onclick="setTopicFilter('gateway')">機場與門戶</button>
+              <button type="button" class="btn" data-filter-topic="economy" onclick="setTopicFilter('economy')">產業與財源</button>
+              <button type="button" class="btn" data-filter-topic="welfare" onclick="setTopicFilter('welfare')">社福・安全・人口</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="policy-search" class="control-label">
+              <i data-lucide="search" aria-hidden="true" width="14" height="14"></i>
+              關鍵字即時檢索
+            </label>
+            <div class="search-wrap">
+              <input id="policy-search" type="text" class="search-input" placeholder="例如：藍線、74、公車、機場、疫苗…" oninput="setSearchQuery(this.value)">
+              <button type="button" class="search-clear" aria-label="清除搜尋關鍵字" onclick="clearSearch()">
+                <i data-lucide="x" aria-hidden="true" width="16" height="16"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-status-bar">
+          <span id="filter-status-text">目前顯示：全部 3 位候選人・所有政見面向</span>
+          <div class="btn-group">
+            <button type="button" id="diff-toggle-btn" class="btn btn--gold" aria-pressed="false" onclick="toggleDiffHighlight()">
+              <i data-lucide="sparkles" aria-hidden="true" width="15" height="15"></i>
+              標記核心差異點
+            </button>
+            <button type="button" class="btn" onclick="resetAllFilters()">重設條件</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Interactive Taichung Transit Corridor Schematic & Inspector -->
+    <section aria-labelledby="sec-corridor-map">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">02｜空間走廊對照</span>
+          <span class="dossier-meta">點選臺中路網節點或走廊按鈕，即時檢視三位候選人對該路段／節點的具體方案</span>
+        </div>
+      </div>
+      <h2 id="sec-corridor-map" class="section-heading">大臺中交通路網與重大走廊主張交互圖</h2>
+      <p class="section-deck">將辯論會中提及的軌道、台74環線、國道4號／東豐快、臺中國際機場及五大生活圈轉譯為空間示意圖，點選任一節點即可比對三方立場。</p>
+
+      <div class="transit-workspace">
+        <div class="map-card">
+          <div class="corridor-pills" role="group" aria-label="選擇交通走廊節點">
+            <button type="button" class="corridor-btn is-active" data-corridor="blue" onclick="selectCorridor('blue')">
+              <span class="corridor-dot corridor-dot--blue"></span>捷運藍線
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="airport" onclick="selectCorridor('airport')">
+              <span class="corridor-dot corridor-dot--amber"></span>臺中國際機場
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="ring74" onclick="selectCorridor('ring74')">
+              <span class="corridor-dot corridor-dot--brick"></span>台74與第二環線
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="dongfeng" onclick="selectCorridor('dongfeng')">
+              <span class="corridor-dot corridor-dot--green"></span>山城與東豐快
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="coast" onclick="selectCorridor('coast')">
+              <span class="corridor-dot corridor-dot--rail"></span>海線雙軌與清水
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="multimetro" onclick="selectCorridor('multimetro')">
+              <span class="corridor-dot corridor-dot--green"></span>綠延・橘紫紅線
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="bus20" onclick="selectCorridor('bus20')">
+              <span class="corridor-dot corridor-dot--blue"></span>公車與20分生活圈
+            </button>
+            <button type="button" class="corridor-btn" data-corridor="dome" onclick="selectCorridor('dome')">
+              <span class="corridor-dot corridor-dot--amber"></span>巨蛋・舊城疏運
+            </button>
+          </div>
+
+          <div class="svg-schematic-wrap">
+            <svg class="transit-svg" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大臺中交通走廊互動示意圖">
+              <!-- Subtle schematic geographic zones -->
+              <rect x="14" y="14" width="612" height="392" rx="6" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="1" />
+
+              <!-- District / Living Circle subtle halos -->
+              <ellipse cx="118" cy="210" rx="84" ry="150" fill="var(--surface-container)" opacity="0.7" />
+              <text x="118" y="44" text-anchor="middle" class="svg-zone-label">海線生活圈・港區</text>
+
+              <ellipse cx="485" cy="112" rx="115" ry="76" fill="var(--surface-container)" opacity="0.7" />
+              <text x="485" y="54" text-anchor="middle" class="svg-zone-label">山線生活圈・豐原／東勢</text>
+
+              <ellipse cx="365" cy="235" rx="115" ry="96" fill="var(--surface-container)" opacity="0.55" />
+              <text x="365" y="156" text-anchor="middle" class="svg-zone-label">市區・舊城・74環線內圈</text>
+
+              <ellipse cx="485" cy="325" rx="108" ry="62" fill="var(--surface-container)" opacity="0.7" />
+              <text x="485" y="374" text-anchor="middle" class="svg-zone-label">屯區・大里・太平・霧峰</text>
+
+              <ellipse cx="242" cy="340" rx="76" ry="44" fill="var(--surface-container)" opacity="0.7" />
+              <text x="242" y="374" text-anchor="middle" class="svg-zone-label">烏日高鐵生活圈</text>
+
+              <!-- Highway 74 Ring & 2nd Ring (dashed outer) -->
+              <rect x="255" y="168" width="210" height="140" rx="28" fill="none" stroke="var(--transit-brick)" stroke-width="3.5" />
+              <rect x="225" y="144" width="270" height="186" rx="40" fill="none" stroke="var(--transit-brick)" stroke-width="2" stroke-dasharray="7 5" opacity="0.85" />
+
+              <!-- Coastal Rail Double Track -->
+              <path d="M 108 65 L 92 150 L 92 270 L 122 355" fill="none" stroke="var(--transit-rail)" stroke-width="3.5" stroke-dasharray="6 4" />
+
+              <!-- Highway 4 & Dongfeng Expressway -->
+              <path d="M 118 118 L 415 102 L 560 112" fill="none" stroke="var(--transit-green)" stroke-width="4" />
+
+              <!-- MRT Green Line & Extension -->
+              <path d="M 488 166 L 412 186 L 348 228 L 242 332" fill="none" stroke="var(--transit-green)" stroke-width="5" stroke-linecap="round" />
+
+              <!-- MRT Blue Line (Harbor to Downtown to Taiping) -->
+              <path d="M 88 214 L 220 214 L 352 246 L 468 256" fill="none" stroke="var(--transit-blue)" stroke-width="6" stroke-linecap="round" />
+
+              <!-- Airport Orange / Purple / Red Links -->
+              <path d="M 155 128 L 258 175 L 352 246 L 440 330" fill="none" stroke="var(--transit-amber)" stroke-width="3.5" stroke-dasharray="5 3" />
+
+              <!-- Interactive Nodes -->
+              <g class="svg-node is-active" data-node="blue" tabindex="0" role="button" aria-label="捷運藍線節點" onclick="selectCorridor('blue')" onkeydown="handleNodeKey(event, 'blue')">
+                <circle class="svg-node-ring" cx="268" cy="226" r="12" />
+                <text x="268" y="206" text-anchor="middle" class="svg-node-label">捷運藍線</text>
+              </g>
+
+              <g class="svg-node" data-node="airport" tabindex="0" role="button" aria-label="臺中國際機場節點" onclick="selectCorridor('airport')" onkeydown="handleNodeKey(event, 'airport')">
+                <circle class="svg-node-ring" cx="155" cy="128" r="12" />
+                <text x="166" y="108" text-anchor="middle" class="svg-node-label">臺中國際機場</text>
+              </g>
+
+              <g class="svg-node" data-node="coast" tabindex="0" role="button" aria-label="海線雙軌與清水節點" onclick="selectCorridor('coast')" onkeydown="handleNodeKey(event, 'coast')">
+                <circle class="svg-node-ring" cx="92" cy="182" r="11" />
+                <text x="92" y="246" text-anchor="middle" class="svg-node-label">清水・海線雙軌</text>
+              </g>
+
+              <g class="svg-node" data-node="dongfeng" tabindex="0" role="button" aria-label="山城與東豐快節點" onclick="selectCorridor('dongfeng')" onkeydown="handleNodeKey(event, 'dongfeng')">
+                <circle class="svg-node-ring" cx="515" cy="110" r="12" />
+                <text x="515" y="90" text-anchor="middle" class="svg-node-label">東豐快・國4豐潭</text>
+              </g>
+
+              <g class="svg-node" data-node="ring74" tabindex="0" role="button" aria-label="台74與第二環線節點" onclick="selectCorridor('ring74')" onkeydown="handleNodeKey(event, 'ring74')">
+                <circle class="svg-node-ring" cx="465" cy="212" r="11" />
+                <text x="530" y="216" text-anchor="middle" class="svg-node-label">台74／第二環線</text>
+              </g>
+
+              <g class="svg-node" data-node="multimetro" tabindex="0" role="button" aria-label="綠延與橘紫紅線節點" onclick="selectCorridor('multimetro')" onkeydown="handleNodeKey(event, 'multimetro')">
+                <circle class="svg-node-ring" cx="445" cy="316" r="11" />
+                <text x="445" y="297" text-anchor="middle" class="svg-node-label">大坑／太平／屯區多線</text>
+              </g>
+
+              <g class="svg-node" data-node="bus20" tabindex="0" role="button" aria-label="公車與20分鐘生活圈節點" onclick="selectCorridor('bus20')" onkeydown="handleNodeKey(event, 'bus20')">
+                <circle class="svg-node-ring" cx="242" cy="332" r="11" />
+                <text x="242" y="312" text-anchor="middle" class="svg-node-label">公車與生活圈轉運</text>
+              </g>
+
+              <g class="svg-node" data-node="dome" tabindex="0" role="button" aria-label="巨蛋與舊城區節點" onclick="selectCorridor('dome')" onkeydown="handleNodeKey(event, 'dome')">
+                <circle class="svg-node-ring" cx="352" cy="246" r="12" />
+                <text x="352" y="274" text-anchor="middle" class="svg-node-label">舊城・巨蛋群</text>
+              </g>
+            </svg>
+          </div>
+          <p class="chart-note">圖例：實線藍／綠為捷運骨幹、橘虛線為機場橘紫線延伸、紅線為台74與規劃第二環線、灰虛線為海線鐵路。點擊節點或上方按鈕可切換解說。</p>
+        </div>
+
+        <aside class="inspector-card" id="corridor-inspector" aria-live="polite">
+          <!-- Populated dynamically by selectCorridor() -->
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6. Detailed Transportation Comparison Matrix -->
+    <section aria-labelledby="sec-matrix">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">03｜交通政見對照矩陣</span>
+          <span class="dossier-meta">依軌道、公路、公車、機場、財源五大維度並列比較</span>
+        </div>
+      </div>
+      <h2 id="sec-matrix" class="section-heading">交通政見全維度比較表</h2>
+      <p class="section-deck">表格隨上方「觀察對象」、「領域篩選」與「關鍵字搜尋」即時更新；開啟「標記核心差異點」可迅速鎖定三人主張的分歧所在。</p>
+
+      <div class="table-card" id="matrix-container">
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th style="width: 17%;">比較維度</th>
+              <th data-col="ho" style="width: 28%;">1號 何欣純（發言 01）</th>
+              <th data-col="chiang" style="width: 28%;">3號 江啟臣（發言 02）</th>
+              <th data-col="hung" style="width: 27%;">2號 洪麗華（發言 03）</th>
+            </tr>
+          </thead>
+          <tbody id="policy-table-body">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+      <div id="matrix-empty" class="empty-state">
+        <p><strong>目前篩選條件下無符合的交通對照條目</strong></p>
+        <p class="cand-summary">可能因為同時選擇了特定領域或關鍵字過於精確，請重設條件以瀏覽全部交通政見。</p>
+        <button type="button" class="btn" onclick="resetAllFilters()">重設所有篩選條件</button>
+      </div>
+    </section>
+
+    <!-- 7. Charts: Policy Emphasis & Quantitative Debate Figures -->
+    <section aria-labelledby="sec-charts">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">04｜數據與議題比重</span>
+          <span class="dossier-meta">辯論會現場引述之具體金額、規模數據與施政比重結構</span>
+        </div>
+      </div>
+      <h2 id="sec-charts" class="section-heading">候選人政策重心結構與關鍵數據視圖</h2>
+      <p class="section-deck">左側整理三位候選人於 25 分鐘發言中明確闡述的六大施政維度著墨深度；右側可切換檢視辯論會中被引用的「交通財政金額」與「人口／場館規模」數據。</p>
+
+      <div class="charts-grid">
+        <article class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">辯論會六大施政維度著墨比較</h3>
+              <p class="chart-sub">依據申論、兩輪提問與結論之政策具體度與優先序彙整（1–5分制）</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="radarChart" aria-label="三位候選人施政維度著墨雷達圖"></canvas>
+          </div>
+          <p class="chart-note">說明：評分反映各候選人於該領域提出具體方案、數字或列為前三優先之強度（非民調支持度）。例如洪麗華高度集中於少子化與教育水資源，何欣純與江啟臣則在交通、產業及社福／安全各有重點。</p>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title" id="bar-chart-title">辯論會提及之交通與市政關鍵金額（億元）</h3>
+              <p class="chart-sub" id="bar-chart-sub">依候選人於辯論會現場明確陳述之預算／經費數字對照</p>
+            </div>
+            <div class="btn-group" role="group" aria-label="切換數據視圖">
+              <button type="button" class="btn is-active" data-chart-mode="budget" onclick="switchBarChart('budget')">交通經費規模</button>
+              <button type="button" class="btn" data-chart-mode="scale" onclick="switchBarChart('scale')">人口與場館數據</button>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="barChart" aria-label="辯論會提及關鍵數據長條圖"></canvas>
+          </div>
+          <p class="chart-note" id="bar-chart-note">數據來源皆出自候選人逐字稿口述：何欣純引述藍線 900→1,600+ 億及 1,300 億缺口；江啟臣引述東豐快/國4近 500 億、公車年補貼 26–27 億與免費增額 0.65 億、校舍每年增編 10 億。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. Q&A Cross-Examination Explorer -->
+    <section aria-labelledby="sec-qa">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">05｜第二階段提問交鋒</span>
+          <span class="dossier-meta">每位候選人各 5 分鐘回應專家提問｜含「錢從哪裡來」與「四年後願景」</span>
+        </div>
+      </div>
+      <h2 id="sec-qa" class="section-heading">兩輪發問人直球交鋒實錄</h2>
+      <p class="section-deck">切換不同發問人輪次，檢視三位候選人如何回應城市延續性、財政來源、施政前三優先，以及「三個詞形容四年後的臺中」。</p>
+
+      <div class="qa-switcher" role="group" aria-label="選擇發問輪次">
+        <button type="button" class="btn is-active" data-qa-round="round1" onclick="selectQaRound('round1')">第一輪｜逢甲大學副校長 李淑</button>
+        <button type="button" class="btn" data-qa-round="round2" onclick="selectQaRound('round2')">第二輪｜中興大學教授 袁鶴齡</button>
+      </div>
+
+      <div id="qa-container">
+        <!-- Populated dynamically by selectQaRound() -->
+      </div>
+    </section>
+
+    <!-- 9. Key Platforms Beyond Transportation -->
+    <section aria-labelledby="sec-platforms">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">06｜全領域核心政見</span>
+          <span class="dossier-meta">產業經濟・社福育兒人口・安全健康永續・文化與治理承諾</span>
+        </div>
+      </div>
+      <h2 id="sec-platforms" class="section-heading">交通以外之關鍵市政藍圖對照</h2>
+      <p class="section-deck">彙整三位候選人在產業轉型、長輩與育兒福利、少子化對策、公共安全、能源空污及舊城文化等領域的核心承諾。</p>
+
+      <div class="platform-grid" id="platform-grid">
+        <!-- Populated by JS & respects filters -->
+      </div>
+      <div id="platform-empty" class="empty-state">
+        <p><strong>目前篩選條件下無對應的其他市政卡片</strong></p>
+        <p class="cand-summary">若您上方僅勾選「捷運軌道」或「機場門戶」，下方綜合市政卡片將自動隱藏以聚焦交通內容。</p>
+        <button type="button" class="btn" onclick="setTopicFilter('all')">顯示全部議題</button>
+      </div>
+    </section>
+
+    <!-- 10. Key Commitments & Debate Clashes -->
+    <section aria-labelledby="sec-clashes">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">07｜焦點交鋒與公開承諾</span>
+          <span class="dossier-meta">辯論會現場互相喊話與明確承諾事項</span>
+        </div>
+      </div>
+      <h2 id="sec-clashes" class="section-heading">四大攻防焦點與具體承諾</h2>
+      <div class="clash-grid">
+        <article class="clash-card">
+          <span class="index-num">CLASH 01｜社福與長輩權益</span>
+          <h3 class="clash-topic">老人健保補助會不會取消？</h3>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--ho">何欣純：</strong>公開承諾老人健保補助一定延續且預算已三讀通過，「敬老愛心卡每月不歸零」，並批對手與盧市府不該再製造長輩恐慌；另承諾不舉債普發現金。
+          </div>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--chiang">江啟臣：</strong>強調照顧長輩與預防醫學並行，主張市府優先補助 65 歲以上「皮蛇疫苗」（高公衛回饋），並延續現有親子館、公托與福利政策。
+          </div>
+        </article>
+
+        <article class="clash-card">
+          <span class="index-num">CLASH 02｜軌道進度與過渡期解方</span>
+          <h3 class="clash-topic">藍線 1,300 億缺口 vs 等捷運前先救公車</h3>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--ho">何欣純：</strong>指出捷運藍線從 900 多億拖成 1,600 多億且仍有 1,300 億缺口，強調須與中央合作爭取經費，同時建置 74 號第二環線與智慧交控。
+          </div>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--chiang">江啟臣：</strong>拼藍線完工、他線開工，但直言在捷運蓋好前，必須先靠「五大 20 分鐘生活圈」全面改革公車系統，現有 26–27 億補貼再微增 6–7 千萬即可真正免費。
+          </div>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--hung">洪麗華：</strong>質疑捷運清水計畫為何毫無消息、要求調查內幕改革後再施作，並反問臺中一年僅剩 8 千名小學生，大興土木要給誰使用？
+          </div>
+        </article>
+
+        <article class="clash-card">
+          <span class="index-num">CLASH 03｜清廉治理與社會住宅</span>
+          <h3 class="clash-topic">配偶家族標案承諾 ＆ 18,000 戶社宅</h3>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--ho">何欣純：</strong>於申論公開邀約江啟臣與洪麗華共同承諾：當選後市長配偶、家人及配偶家族企業「絕不承攬市府標案、不進入市政府」，並宣誓用人唯才不分黨派。
+          </div>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--chiang">江啟臣：</strong>承諾「就算中央不蓋了，我們自己來蓋」，社宅一定蓋滿 18,000 戶；並強調其白皮書百項新政均經過財務試算，要讓科技走在風險前。
+          </div>
+          <div class="quote-line">
+            <strong class="platform-cand-tag--hung">洪麗華：</strong>承諾將第二胎起撫養至國中以於 8 年內補足 27 萬人力缺口，守住阿公阿媽的勞保退休金，並要求兩位對手「讓位」由自己徹底改革。
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sources & Notes Footer -->
+    <footer class="sources-footer">
+      <p style="margin:0;"><strong>資料來源：</strong>TVBS NEWS 現場直播逐字稿〈臺中市長政見發表會江啟臣、何欣純交鋒｜LIVE〉——臺中市第五屆市長選舉候選人公辦電視政見辯論會（主持人：臺中市選舉委員會黃佑蘭委員；發問人：逢甲大學副校長李淑女士、國立中興大學國家政策與公共事務研究所教授袁鶴齡先生）。</p>
+      <p style="margin:0;"><strong>整理說明：</strong>本頁面所有政見條目、預算數額、工程名稱及數據均忠實摘錄自上述辯論會三階段發言內容；原始語音辨識逐字稿中之部分同音字（如候選人姓名、發問人姓名及「五光國小」等專有名詞）已依標準繁體中文校訂，以利正確閱讀與對照。</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // =========================================================
+    // 1. Grounded Dataset (Backtick template literals everywhere)
+    // =========================================================
+    const CORRIDORS = {
+      blue: {
+        badge: `軌道核心骨幹`,
+        title: `捷運藍線（市區—海線）`,
+        sub: `橫貫臺灣大道、串聯港區與市中心的首要捷運東西向骨幹。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `實質動工＋財政解套`,
+            text: `批評藍線八年來經費自林佳龍時期 900 多億增至 1,600 多億，且議會質詢時捷運局坦承仍有約 1,300 億缺口；主張上任後與中央合作極大化爭取補助，參考北捷、高捷模式評估民間合作開發，讓藍線實質動工並推進延伸太平。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `拼完工＋公車過渡配套`,
+            text: `主張多線齊發「拼藍線完工、其他線開工」；同時務實指出在捷運完工前的過渡期，必須透過五大 20 分鐘生活圈全面改革公車系統，讓海線與市區通勤族先享受到快速、準點、方便的運輸。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `檢視迫切性與內幕`,
+            text: `認為兩位對手談論諸多建設卻未見完整落實，且在少子化下臺中一年僅剩約 8,000 名小學生，質疑若無足夠下一代支撐人口與稅收，單靠硬體建設難以解決根本問題。`
+          }
+        ]
+      },
+      airport: {
+        badge: `國際門戶關鍵`,
+        title: `臺中國際機場（一個大機場）`,
+        sub: `連結清泉崗機場升級、航空聯外軌道與國際商貿會展動能。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `三個第一與一個大機場`,
+            text: `列為核心看板政見之一：與中央合作加速臺中國際機場升級計畫，推動「擴建航廈、國際航班倍增」，並主張外國商務與觀光旅客「從機場到市區可以有捷運可以搭」，串聯會展、旅遊與無人機航太產業。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `國際化・中部新門戶`,
+            text: `主張讓臺中成為「臺灣的新門戶」與國際會展城市，透過國際合作發展委員會整合城市外交與會展經濟（168 藍圖），讓世界訂單走進臺中、臺中商品走進世界。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `資源優先回歸本地民生`,
+            text: `在國際化與外來資源討論上，質疑政府不應花大錢補助外國學生（1–3 萬元）卻未顧好本地年輕人，強調應先改善本地人民生活水平與少子化問題。`
+          }
+        ]
+      },
+      ring74: {
+        badge: `高快速路網`,
+        title: `台74線壅塞解方與第二環線`,
+        sub: `針對臺灣大道與台74線日常尖峰塞車痛點提出工程與科技方案。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `智慧交控＋第二環線`,
+            text: `直指八年來市民每天面對台74線與臺灣大道漫長紅燈與塞車；提出短期內全面盤點熱點建置「智慧交通管控系統」，中長期儘速規劃「台74線之外的第二環線快速道路」，並打通生活圈四號道路銜接國3立體交流道。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `AI大數據治堵＋分區減壓`,
+            text: `主張將 AI 與大數據落實於交通治理與城市韌性，並透過「五大 20 分鐘生活圈」均衡醫療、就學、就業機能，加上快慢公車轉乘改革，從源頭減少市民跨區長途開車的舟車勞頓。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `優先順序檢討`,
+            text: `認為目前執政者與候選人談了許多大型交通建設，卻忽略基層產業因缺工依賴外勞及年輕人不敢生養的根本困境，主張施政須先治本再談擴張建設。`
+          }
+        ]
+      },
+      dongfeng: {
+        badge: `山城命脈`,
+        title: `山城交通與東豐快速道路・國4豐潭段`,
+        sub: `攸關豐原、東勢、石岡與山城鄉親安全回家的聯外高快速路網。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `加速東豐快・關注豐原人口`,
+            text: `指出豐原人口近年減少，主張加快東豐快速道路工程，解決山城交通瓶頸，並將山城慢活打造成國際觀光品牌，同時配合山海環線串聯山城與市區。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `500億爭取實績・山線生活圈`,
+            text: `細數過去擔任立委期間爭取「國道4號豐潭段延伸」及「東豐快速道路」新建（近 500 億元重大建設），給山城鄉親安全回家的路；未來將以山線為五大 20 分鐘生活圈之一持續強化。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `關注谷關山區與原鄉`,
+            text: `提及曾赴谷關兩、三次深入訪談，發現連原住民聚落也面臨少子化危機，並呼籲關注山區水資源與偏鄉基礎發展。`
+          }
+        ]
+      },
+      coast: {
+        badge: `海線鐵道與門戶`,
+        title: `海線雙軌高架化・捷運延伸清水`,
+        sub: `海線鄉親通勤等不到捷運與上下學公車的長年痛點。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `清水延伸＋海線雙軌高架`,
+            text: `指出海線鄉親等不到藍線、學生甚至等不到上下學公車；承諾推動藍線延伸清水儘快核定與規劃設計、全力推動「海線鐵路雙軌高架化」，並在港區打造首條「觀光鐵道」。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `海線 20 分鐘生活圈`,
+            text: `將海線列為五大 20 分鐘生活圈重點區域，主張在軌道完全成形前，先行優化海線區域內密集接駁公車與跨區快速公車，並新建轉運中心縮短海線居民通勤時間。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `清查清水計畫為何無消息`,
+            text: `於第二輪提問明確點名：「捷運既已有之，為何到清水的計畫一點消息都沒有？」主張上任後應立即調閱原有計畫資料、查明內幕並進行改革，改革完成後再行施作。`
+          }
+        ]
+      },
+      multimetro: {
+        badge: `多線軌道網`,
+        title: `綠線延大坑・橘／紫／紅線與山海環線`,
+        sub: `串聯屯區（大里、太平、霧峰）、北屯大坑與大臺中環狀路網。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `全線盤點・推動動工`,
+            text: `主張橘線（含延伸太平）行政院既已核定可行性評估，應接續拼綜合規劃、細部設計與動工；批綠線延伸大坑「多年不動如山」須盡快動工完工，並全力推動紫線、紅線與山海環線。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `多線齊發＋屯區生活圈`,
+            text: `主張「捷運多線齊發、藍線拼完工、其他線開工」，並提醒大臺中幅員達 2,200 多平方公里，不能單純複製雙北（紐約型）經驗，應如洛杉磯（LA）般結合高效率公車與屯區生活圈路網互補。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `檢視財政與人口效益`,
+            text: `未針對單一紫／紅線提出路線細節，強調無論交通或校舍建設，都必須優先面對少子化後無人使用及預算排擠之結構風險。`
+          }
+        ]
+      },
+      bus20: {
+        badge: `日常通勤核心`,
+        title: `公車全面盤點與 20 分鐘生活圈`,
+        sub: `從路線設計、準點率、轉運站到司機待遇與免費補貼政策。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `路網盤點＋人本步行空間`,
+            text: `承諾全面盤點公車路網、班次、準點率及公車品質管理文化，解決上下學等不到車問題；同步建置平整人行道與自行車道，讓長輩自己搭車就醫、孩子安全步行上學。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `GIS/AI 重整＋僅增6千萬真正免費`,
+            text: `核心主打「五大 20 分鐘生活圈」（山、海、屯、市、烏日高鐵）：運用 GIS 與 AI 每日人流數據重整路網，「短程密集、長程快速、轉乘方便」，提高司機待遇與新建轉運中心；並精算現有年補貼 26–27 億僅需再增 6–7 千萬即可全面免費。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `肯定過往慢活綠廊`,
+            text: `未提出公車系統數字改革，但肯定林佳龍市長時期清理河道與打造河岸漫步、騎腳踏車之友善休憩環境。`
+          }
+        ]
+      },
+      dome: {
+        badge: `大型場館與舊城`,
+        title: `巨蛋、超巨蛋、會展中心與舊城接駁`,
+        sub: `可容納 1.6 萬至 5 萬人大型活動場館之大眾運輸疏散挑戰。`,
+        stances: [
+          {
+            cand: `ho`,
+            name: `1號 何欣純`,
+            tag: `點出捷運未共構之疏運課題`,
+            text: `表態支持延續臺中巨蛋（約 16,000 席）與 BOT 超巨蛋，但銳利指出目前巨蛋與超巨蛋「並未與捷運藍線或橘線共構」，在捷運還需等 5 到 10 年前，必須優先建立公車接駁與人潮疏散配套；並串聯臺中車站、柳川綠川打造中城文化觀光廊帶。`
+          },
+          {
+            cand: `chiang`,
+            name: `3號 江啟臣`,
+            tag: `5萬人經濟＋前店後廠轉運`,
+            text: `延續會展中心、綠美圖、巨蛋與超巨蛋建設，描繪未來 5 萬名球迷齊呼全壘打及國際會展外溢效益；搭配站前新民街倉庫群改造為 Live House 與流行音樂中心，以完善公車與轉運系統支撐人潮。`
+          },
+          {
+            cand: `hung`,
+            name: `2號 洪麗華`,
+            tag: `巨蛋應著重教育與棒球`,
+            text: `認為巨蛋不應只偏重商業演唱會（民眾工作忙碌無暇消費），應著重於教育功能與讓孩子展現活力，特別力推「棒球文化」延續臺灣在國際舞台的榮耀。`
+          }
+        ]
+      }
+    };
+
+    const POLICY_MATRIX = [
+      {
+        id: `rail-mrt`,
+        topic: `rail`,
+        title: `捷運路網與進度策略`,
+        cat: `捷運軌道`,
+        ho: {
+          lead: `中央地方合作，拼藍線實質動工＋多線並進`,
+          items: [
+            `批藍線經費自 900 多億增至 1,600 多億，且議會揭露尚有 <span class="diff-highlight">1,300 億缺口</span>，承諾加速實質動工。`,
+            `推動橘線（含延伸太平）與藍線延伸清水盡快核定、綜規與細設；催促「多年不動如山」的綠線延伸大坑動工。`,
+            `全力推進紫線、紅線與山海環線。`
+          ]
+        },
+        chiang: {
+          lead: `多線齊發拼藍線完工，同步以公車先行補位`,
+          items: [
+            `承諾<span class="diff-highlight">「拼藍線完工、其他線開工」</span>，多線齊發推進大臺中軌道建設。`,
+            `指出臺中幅員 2,200 多平方公里（雙北像紐約、臺中像 LA），捷運無法短期覆蓋全區，須在完工前先以公車生活圈系統補位。`
+          ]
+        },
+        hung: {
+          lead: `要求清查清水線內幕，先檢討人口效益`,
+          items: [
+            `點名質問<span class="diff-highlight">「捷運到清水的計畫為何毫無消息」</span>，主張調閱原計畫資料、查明內幕並改革後再施作。`,
+            `質疑臺中今年小學生僅約 8,000 人，在未解決少子化前大舉建設軌道「要給誰使用」。`
+          ]
+        }
+      },
+      {
+        id: `rail-tr`,
+        topic: `rail`,
+        title: `鐵路立體化與觀光鐵道`,
+        cat: `捷運軌道`,
+        ho: {
+          lead: `海線鐵路雙軌高架化＋港區觀光鐵道`,
+          items: [
+            `明確承諾全力推動<span class="diff-highlight">海線鐵路雙軌高架化</span>動工與完工，消弭海線東西向阻隔。`,
+            `提出於臺中港區打造全市首條<span class="diff-highlight">觀光鐵道</span>，串聯海線觀光亮點。`
+          ]
+        },
+        chiang: {
+          lead: `結合車站門戶改造與轉運節點`,
+          items: [
+            `著重臺中火車站前「新民街倉庫群」轉型 Live House 與流行音樂中心，串聯周邊博物館群帶動軌道與舊城人流。`
+          ]
+        },
+        hung: {
+          lead: `無單獨提出鐵路高架化細節`,
+          items: [
+            `主張先整頓教育與人口基礎，再依實際需求調整各項交通硬體投入。`
+          ]
+        }
+      },
+      {
+        id: `road-highway`,
+        topic: `road`,
+        title: `台74線塞車與聯外快速道路`,
+        cat: `公路與公車`,
+        ho: {
+          lead: `智慧交控解塞＋規劃「74 號外第二環線」`,
+          items: [
+            `針對台74線與臺灣大道壅塞，承諾短期全面盤點熱點建置<span class="diff-highlight">智慧交通管控系統</span>。`,
+            `長期規劃<span class="diff-highlight">台74線外第二環線快速道路</span>，並推動國4延伸台61線、生活圈四號道銜接國3立體交流道、加速東豐快。`
+          ]
+        },
+        chiang: {
+          lead: `延續國4／東豐快 500 億實績＋AI 疏導`,
+          items: [
+            `細數立委任內爭取<span class="diff-highlight">國道4號豐潭段延伸與東豐快速道路（近 500 億元）</span>，打通山城回家路。`,
+            `主張以 AI 與大數據進行智慧交通治理與災害應變調度。`
+          ]
+        },
+        hung: {
+          lead: `關注偏鄉均衡開發與基礎安全`,
+          items: [
+            `提及實地走訪谷關山區觀察人口凋零問題，強調建設須兼顧人命關天之水庫安全與實質民生需要。`
+          ]
+        }
+      },
+      {
+        id: `road-bus`,
+        topic: `road`,
+        title: `公車路網改革、準點率與費率`,
+        cat: `公路與公車`,
+        ho: {
+          lead: `全面盤點公車路網、管理文化與人行道`,
+          items: [
+            `直指海線學生常等不到上下學公車，承諾全面盤點路線、班次、準點率及公車品質管理文化。`,
+            `結合<span class="diff-highlight">安全平坦的人行道與自行車道</span>，落實長輩安心搭車就醫、孩童步行上學願景。`
+          ]
+        },
+        chiang: {
+          lead: `五大 20 分鐘生活圈＋加碼 6–7 千萬真免費`,
+          items: [
+            `以 GIS 與 AI 分析每日人流，重整山、海、屯、市、烏日高鐵<span class="diff-highlight">五大 20 分鐘生活圈</span>：短程密集、長程快速、轉乘方便。`,
+            `主張提高公車司機待遇、新建轉運中心與轉運站。`,
+            `精算現有年補助 26–27 億，<span class="diff-highlight">僅需再增 6–7 千萬元即可全面免費</span>（強調省時比免費更重要）。`
+          ]
+        },
+        hung: {
+          lead: `肯定綠川柳川步行與單車休憩環境`,
+          items: [
+            `無提出公車補貼或路網調整數字，但高度肯定林佳龍時期河川清淤與岸邊漫步、騎自行車之生活品質改善。`
+          ]
+        }
+      },
+      {
+        id: `gateway-airport`,
+        topic: `gateway`,
+        title: `國際機場、大型場館與接駁配套`,
+        cat: `機場與門戶`,
+        ho: {
+          lead: `臺中大機場擴建倍增＋點出巨蛋無捷運共構`,
+          items: [
+            `主打<span class="diff-highlight">「一個大機場」</span>：擴建航廈、國際航班倍增，打造機場到市區捷運接駁。`,
+            `支持巨蛋（16,000席）與超巨蛋，但點出兩者皆未與藍橘線共構，必須先備妥公車疏運與專業營運團隊評估。`
+          ]
+        },
+        chiang: {
+          lead: `國際會展 168＋5 萬人超巨蛋娛樂經濟`,
+          items: [
+            `透過國際會展中心發揮「前店後廠」效應，並讓超巨蛋與巨蛋帶動<span class="diff-highlight">5 萬名球迷與演唱會經濟</span>，使臺中成為中部新門戶。`,
+            `以轉運中心與生活圈快線公車支撐大型場館人潮。`
+          ]
+        },
+        hung: {
+          lead: `巨蛋優先服務教育與棒球運動文化`,
+          items: [
+            `反對過度偏向商業演唱會，主張讓孩子在巨蛋展現活力，並大力推展代表國家的<span class="diff-highlight">棒球運動</span>。`
+          ]
+        }
+      },
+      {
+        id: `economy-finance`,
+        topic: `economy`,
+        title: `重大建設「錢從哪裡來？」（財政觀）`,
+        cat: `產業與財源`,
+        ho: {
+          lead: `中央地方合作最大化資源＋民間合作開發`,
+          items: [
+            `強調<span class="diff-highlight">「與中央合作、不對立」</span>爭取軌道與機場補助極大化。`,
+            `參考北捷、高捷模式引進民間合作開發；全面盤點現有預算、節省浪費，騰出財源推動社福與「不舉債普發現金」。`
+          ]
+        },
+        chiang: {
+          lead: `白皮書財務試算＋「要命的事舉債也要做」`,
+          items: [
+            `強調白皮書百項政見皆已先完成財務試算；公車免費僅需微幅增編 6–7 千萬。`,
+            `明確表態涉及市民生命安全與健康之事（如安全網、校舍）<span class="diff-highlight">「借錢、舉債也要做」</span>，事前預警即是替未來省錢。`
+          ]
+        },
+        hung: {
+          lead: `重整教育經費比重與行政程序浪費`,
+          items: [
+            `主張檢討教育局經費權衡，取消對外籍學生 1–3 萬元高額補助，將不必要的行政程序經費挪回本地育兒與基礎建設。`
+          ]
+        }
+      }
+    ];
+
+    const QA_DATA = {
+      round1: {
+        asker: `第一輪發問人｜逢甲大學副校長 李淑女士`,
+        prompt: `「過去 20 年（2007–2026）三位傑出市長一棒接一棒，您最想延續的政見是什麼？未來四年任期中，哪幾項政策能讓民眾最立即有感、打造更宜居的城市？」`,
+        answers: [
+          {
+            cand: `ho`,
+            badge: `選舉 1 號｜發言 01`,
+            name: `何欣純`,
+            highlight: `延續巨蛋與超巨蛋建設，但須補足專業營運評估與交通疏散`,
+            points: [
+              `認同市政具延續性，回應年輕人期待國際演唱會與室內棒球場，明確支持延續「臺中巨蛋」（約 16,000 席）與 BOT「超巨蛋」。`,
+              `提醒市民關心 BOT 案是否經過充分事前評估，上任後將把關營運團隊與商業模式，走出臺中獨特的演唱會與賽事經濟。`,
+              `點出目前巨蛋、超巨蛋皆未與藍線或橘線共構，在捷運需等 5–10 年前，必須立即優化公車路網與接駁疏散配套。`
+            ],
+            footerTag: `四年有感重點：公車與場館交通接駁＋專業營運把關`
+          },
+          {
+            cand: `chiang`,
+            badge: `選舉 3 號｜發言 02`,
+            name: `江啟臣`,
+            highlight: `延續美樂地 2.0、教育 40% 佔比、空污治理，並以會展與省時升級`,
+            points: [
+              `肯定盧市長任內「美樂地公園」（升級 2.0 版）、教育經費最高佔比（10 元中近 4 元投入教育）、區親子館與公托倍增、國民運動中心（將增建社區型場館）。`,
+              `延續永續與空污改善，強力監督中火降載並汰除老舊「亞臨界」燃煤機組。`,
+              `未來黃金十年有感雙主軸：「會展經濟 168」幫市民賺錢加薪、「五大 20 分鐘生活圈」幫市民省下通勤時間。`
+            ],
+            footerTag: `四年有感重點：幫市民賺錢（會展168）＋幫市民省時間（20分生活圈）`
+          },
+          {
+            cand: `hung`,
+            badge: `選舉 2 號｜發言 03`,
+            name: `洪麗華`,
+            highlight: `巨蛋應重教育與棒球而非僅演唱會；肯定林佳龍整治河川與彩光秀`,
+            points: [
+              `認為現今工業社會民眾忙碌到沒時間看電視或吃飯，巨蛋不應只偏重演唱會，應著重教育功能與讓孩子表現，並大力推動「棒球」代表臺灣站上國際。`,
+              `點名最肯定「林佳龍市長」時期清理河道臭水溝、營造岸邊散步與單車環境，以及市府彩光秀（里長與議員皆曾參觀並給予好評）。`
+            ],
+            footerTag: `四年有感重點：改善基層生活品質＋推展棒球與親子休憩`
+          }
+        ]
+      },
+      round2: {
+        asker: `第二輪發問人｜國立中興大學國家政策與公共事務研究所教授 袁鶴齡先生`,
+        prompt: `「四年任期與財政預算皆有限，當選後『前三優先政策』為何？『錢從哪裡來』？並請用『三個詞』描述四年後的臺中市。」`,
+        answers: [
+          {
+            cand: `ho`,
+            badge: `選舉 1 號｜發言 01`,
+            name: `何欣純`,
+            highlight: `第一優先改善交通、第二六星社福照顧市民、持續盤點財政與中央合作`,
+            points: [
+              `優先一【交通】：推動藍線、橘線、綠延大坑、紫紅線與海線雙軌高架化；批藍線尚有 1,300 億缺口，唯有趕快動工才能避免成本倍增；同步改革公車準點與品質。`,
+              `優先二【社福】：確保明年已編列之老人健保補助與營養午餐免費政策執行並再升級加碼。`,
+              `財源【錢從哪來】：①與中央合作不對立、爭取最大補助 ②參考北捷、高捷推動民間合作開發 ③盤點既有計畫節省浪費。`
+            ],
+            footerTag: `四年後關鍵願景詞（結論闡述）：「安心・安全・安居」（讓日常平凡需求在每天實現）`
+          },
+          {
+            cand: `chiang`,
+            badge: `選舉 3 號｜發言 02`,
+            name: `江啟臣`,
+            highlight: `1. 安全第一（智慧安全網） 2. 健康優先（預防醫學疫苗） 3. 賺錢省時（生活圈與產業）`,
+            points: [
+              `優先一【安全】：串聯臺中現有八大安全網為智慧安全網，事前預警即是省錢；要命的事舉債也要做。`,
+              `優先二【健康】：補助高回饋率疫苗——65 歲以上「皮蛇疫苗」（約 1.6 萬元）、孕婦「RSV 疫苗」（約 7–8 千元）及視疫情補助「腸病毒疫苗」，加上推動運動場館。`,
+              `優先三【賺錢省時】：五大 20 分鐘生活圈（GIS/AI 調度＋公車免費僅增 6–7 千萬）＋「機器人製造之都」提高薪資；白皮書每項皆經財務試算。`
+            ],
+            footerTag: `四年後城市定位（結論闡述）：「安全・健康・有錢有閒／國際會展、智慧友善、臺灣新門戶」`
+          },
+          {
+            cand: `hung`,
+            badge: `選舉 2 號｜發言 03`,
+            name: `洪麗華`,
+            highlight: `第一優先搶救少子化（二胎起市府養至國中），查明清水捷運並重整教育預算`,
+            points: [
+              `優先一【少子化與勞保】：舉臺北老松國小昔 18,000 人今僅招 450 人、臺中小學生僅剩 8,000 人卻有 11 萬人退休為例，主張「第 2 胎起由市府撫養至國中畢業」，8 年內補足 27 萬人力缺口守住勞保退休金。`,
+              `優先二【清查捷運】：要求查明捷運清水計畫延宕內幕並改革後再施作。`,
+              `財源【錢從哪來】：檢討教育局預算比重，批一方面蓋 4 所新校卻讓 100 所老校面臨關閉（如僅剩數名學生），且不該給外籍生 1–3 萬補助，應把經費留給本地孩子。`
+            ],
+            footerTag: `四年後承諾目標：「安定・平穩・經濟提升 30%」`
+          }
+        ]
+      }
+    };
+
+    const PLATFORM_CARDS = [
+      {
+        id: `plat-industry`,
+        topic: `economy`,
+        title: `產業轉型與城市經濟引擎`,
+        badge: `產業政策`,
+        entries: [
+          { cand: `ho`, name: `何欣純`, text: `鞏固烏日、大里、太平、豐原、潭雅神至海線精密機械／工具機「護國神山」；轉型航太、無人機與 AI 醫療，爭取中央設置「臺中無人載具製造中心」。` },
+          { cand: `chiang`, name: `江啟臣`, text: `成立「國際合作發展委員會」推動「會展經濟 168」（如米蘭、漢諾威前店後廠模式）；推進 AI 產業化、產業 AI 化，打造「機器人製造之都」帶動員工加薪。` },
+          { cand: `hung`, name: `洪麗華`, text: `反映中小企業創業 50 年卻被迫訓練外勞甚至面臨交棒給外勞之困境，主張保障本地勞工就業與企業傳承，承諾當選後提升經濟 30%。` }
+        ]
+      },
+      {
+        id: `plat-welfare`,
+        topic: `welfare`,
+        title: `高齡照顧、社福與青年育兒`,
+        badge: `社福人口`,
+        entries: [
+          { cand: `ho`, name: `何欣純`, text: `「六星社福」：延續老人健保補助、敬老愛心卡每月不歸零並擴大至超商超市藥局農漁會；不舉債普發現金；生育津貼加倍、補助坐月子、公托兩歲專班倍增、延長夜／假日臨托、成立青年局。` },
+          { cand: `chiang`, name: `江啟臣`, text: `成立「婦幼發展委員會」統籌醫療、生育、教育與住宅；承諾「中央不蓋我們自己蓋」，社會住宅蓋滿 18,000 戶；延續教育預算 40% 高佔比並增建區親子館與公托。` },
+          { cand: `hung`, name: `洪麗華`, text: `主張「第一胎家庭撫養、第二胎起（含3、4胎以上）由市政府撫養至國中畢業」；檢討市政府既有的未婚聯誼經費執行成效，落實實質媒合幫助年輕人成家。` }
+        ]
+      },
+      {
+        id: `plat-safety`,
+        topic: `welfare`,
+        title: `公共安全、醫療健康與資源保護`,
+        badge: `安全永續`,
+        entries: [
+          { cand: `ho`, name: `何欣純`, text: `點出近年食安、公安、校安頻登負面新聞「市政思維塞住了」；承諾強化城市安全與安心步行環境，並恢復「中城文化觀光廊帶」與大里菸廠文創轉型。` },
+          { cand: `chiang`, name: `江啟臣`, text: `「安全第一、健康優先」：串聯八大安全網為智慧安全網；每年增編至少 10 億元改善老舊校舍廁所跑道；優先補助皮蛇／RSV／腸病毒疫苗；強督中火汰除亞臨界燃煤機組。` },
+          { cand: `hung`, name: `洪麗華`, text: `提出「水資源與水庫安全」屬人命關天急務：批蓋房抽乾地下水，推廣雨水收集棉質過濾再利用，並編列專款修繕與重建老舊水庫；反對一面蓋新校一面讓百所小校關閉。` }
+        ]
+      }
+    ];
+
+    // =========================================================
+    // 2. Application State
+    // =========================================================
+    const appState = {
+      candFilter: `all`,
+      topicFilter: `all`,
+      searchQuery: ``,
+      diffHighlight: false,
+      activeCorridor: `blue`,
+      activeQaRound: `round1`,
+      activeBarMode: `budget`
+    };
+
+    let radarChartInstance = null;
+    let barChartInstance = null;
+
+    // =========================================================
+    // 3. Helper: Read CSS Design Tokens safely for Charts
+    // =========================================================
+    function getToken(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function candMatchesFilter(candKey) {
+      return appState.candFilter === `all` || appState.candFilter === candKey;
+    }
+
+    // =========================================================
+    // 4. Render Corridor Inspector
+    // =========================================================
+    function selectCorridor(corridorKey) {
+      if (!CORRIDORS[corridorKey]) return;
+      appState.activeCorridor = corridorKey;
+
+      document.querySelectorAll(`.corridor-btn`).forEach(function (btn) {
+        const isMatch = btn.dataset.corridor === corridorKey;
+        btn.classList.toggle(`is-active`, isMatch);
+        btn.setAttribute(`aria-pressed`, isMatch ? `true` : `false`);
+      });
+
+      document.querySelectorAll(`.svg-node`).forEach(function (node) {
+        const isMatch = node.dataset.node === corridorKey;
+        node.classList.toggle(`is-active`, isMatch);
+      });
+
+      const inspector = document.getElementById(`corridor-inspector`);
+      if (!inspector) return;
+
+      const data = CORRIDORS[corridorKey];
+      const visibleStances = data.stances.filter(function (s) {
+        return candMatchesFilter(s.cand);
+      });
+
+      const stancesHtml = visibleStances.map(function (s) {
+        return `
+          <div class="stance-block stance-block--${s.cand}">
+            <div class="stance-head">
+              <span class="stance-cand">${s.name}</span>
+              <span class="stance-tag">${s.tag}</span>
+            </div>
+            <p class="stance-text">${s.text}</p>
+          </div>
+        `;
+      }).join(``);
+
+      inspector.innerHTML = `
+        <div class="inspector-header">
+          <span class="dossier-pill">${data.badge}</span>
+          <h3 class="inspector-title">${data.title}</h3>
+          <p class="inspector-sub">${data.sub}</p>
+        </div>
+        ${stancesHtml}
+      `;
+    }
+
+    function handleNodeKey(event, key) {
+      if (event.key === `Enter` || event.key === ` `) {
+        event.preventDefault();
+        selectCorridor(key);
+      }
+    }
+
+    // =========================================================
+    // 5. Render Comparison Matrix
+    // =========================================================
+    function renderMatrix() {
+      const tbody = document.getElementById(`policy-table-body`);
+      const tableCard = document.getElementById(`matrix-container`);
+      const emptyBox = document.getElementById(`matrix-empty`);
+      if (!tbody || !tableCard || !emptyBox) return;
+
+      const query = appState.searchQuery.trim().toLowerCase();
+
+      const cols = [`ho`, `chiang`, `hung`];
+      cols.forEach(function (c) {
+        const th = document.querySelector(`th[data-col="${c}"]`);
+        if (th) {
+          th.style.display = candMatchesFilter(c) ? `` : `none`;
+        }
+      });
+
+      const filteredRows = POLICY_MATRIX.filter(function (row) {
+        const topicOk = appState.topicFilter === `all` || appState.topicFilter === row.topic;
+        if (!topicOk) return false;
+        if (!query) return true;
+
+        const blob = [
+          row.title,
+          row.cat,
+          candMatchesFilter(`ho`) ? row.ho.lead + ` ` + row.ho.items.join(` `) : ``,
+          candMatchesFilter(`chiang`) ? row.chiang.lead + ` ` + row.chiang.items.join(` `) : ``,
+          candMatchesFilter(`hung`) ? row.hung.lead + ` ` + row.hung.items.join(` `) : ``
+        ].join(` `).toLowerCase();
+
+        return blob.includes(query);
+      });
+
+      if (filteredRows.length === 0) {
+        tableCard.style.display = `none`;
+        emptyBox.classList.add(`is-visible`);
+        return;
+      }
+
+      tableCard.style.display = ``;
+      emptyBox.classList.remove(`is-visible`);
+
+      const rowsHtml = filteredRows.map(function (row) {
+        function buildCell(candKey, data) {
+          if (!candMatchesFilter(candKey)) return ``;
+          const itemsHtml = data.items.map(function (item) {
+            const cleanItem = appState.diffHighlight
+              ? item
+              : item.replace(/class="diff-highlight"/g, `class=""`);
+            return `<li>${cleanItem}</li>`;
+          }).join(``);
+          return `
+            <td>
+              <span class="cell-lead">${data.lead}</span>
+              <ul class="cell-list">${itemsHtml}</ul>
+            </td>
+          `;
+        }
+
+        return `
+          <tr>
+            <td>
+              <div class="row-dim-title">${row.title}</div>
+              <span class="row-dim-cat">${row.cat}</span>
+            </td>
+            ${buildCell(`ho`, row.ho)}
+            ${buildCell(`chiang`, row.chiang)}
+            ${buildCell(`hung`, row.hung)}
+          </tr>
+        `;
+      }).join(``);
+
+      tbody.innerHTML = rowsHtml;
+    }
+
+    // =========================================================
+    // 6. Render Platform Cards
+    // =========================================================
+    function renderPlatformCards() {
+      const grid = document.getElementById(`platform-grid`);
+      const emptyBox = document.getElementById(`platform-empty`);
+      if (!grid || !emptyBox) return;
+
+      const query = appState.searchQuery.trim().toLowerCase();
+
+      const filtered = PLATFORM_CARDS.filter(function (card) {
+        const topicOk = appState.topicFilter === `all` || appState.topicFilter === card.topic;
+        if (!topicOk) return false;
+        if (!query) return true;
+        const textBlob = card.title + ` ` + card.entries.map(function (e) {
+          return candMatchesFilter(e.cand) ? e.name + ` ` + e.text : ``;
+        }).join(` `);
+        return textBlob.toLowerCase().includes(query);
+      });
+
+      if (filtered.length === 0) {
+        grid.style.display = `none`;
+        emptyBox.classList.add(`is-visible`);
+        return;
+      }
+
+      grid.style.display = `grid`;
+      emptyBox.classList.remove(`is-visible`);
+
+      grid.innerHTML = filtered.map(function (card) {
+        const visibleEntries = card.entries.filter(function (e) {
+          return candMatchesFilter(e.cand);
+        });
+        const entriesHtml = visibleEntries.map(function (e) {
+          return `
+            <div class="platform-item">
+              <span class="platform-cand-tag platform-cand-tag--${e.cand}">${e.name}｜</span>
+              <span>${e.text}</span>
+            </div>
+          `;
+        }).join(``);
+
+        return `
+          <article class="platform-card">
+            <div class="platform-card-head">
+              <h3 class="platform-title">${card.title}</h3>
+              <span class="row-dim-cat">${card.badge}</span>
+            </div>
+            <div>${entriesHtml}</div>
+          </article>
+        `;
+      }).join(``);
+    }
+
+    // =========================================================
+    // 7. Render Q&A Round
+    // =========================================================
+    function selectQaRound(roundKey) {
+      if (!QA_DATA[roundKey]) return;
+      appState.activeQaRound = roundKey;
+
+      document.querySelectorAll(`[data-qa-round]`).forEach(function (btn) {
+        const isMatch = btn.dataset.qaRound === roundKey;
+        btn.classList.toggle(`is-active`, isMatch);
+        btn.setAttribute(`aria-pressed`, isMatch ? `true` : `false`);
+      });
+
+      const container = document.getElementById(`qa-container`);
+      if (!container) return;
+
+      const data = QA_DATA[roundKey];
+      const visibleAnswers = data.answers.filter(function (a) {
+        return candMatchesFilter(a.cand);
+      });
+
+      const cardsHtml = visibleAnswers.map(function (a) {
+        const ptsHtml = a.points.map(function (p) {
+          return `<li>${p}</li>`;
+        }).join(``);
+
+        return `
+          <article class="qa-card">
+            <div class="qa-meta-row">
+              <span class="cand-badge cand-badge--${a.cand}">${a.badge}</span>
+              <strong style="font-size: 1.05rem;">${a.name}</strong>
+            </div>
+            <p style="font-weight: 700; color: var(--secondary); margin: 0;">${a.highlight}</p>
+            <ul class="cell-list">${ptsHtml}</ul>
+            <div class="qa-three-words">
+              <strong>核心提煉：</strong>${a.footerTag}
+            </div>
+          </article>
+        `;
+      }).join(``);
+
+      container.innerHTML = `
+        <div class="qa-question-box">
+          <div class="qa-asker">${data.asker}</div>
+          <p class="qa-prompt">${data.prompt}</p>
+        </div>
+        <div class="qa-grid">${cardsHtml}</div>
+      `;
+    }
+
+    // =========================================================
+    // 8. Filter Controls & Status Updates
+    // =========================================================
+    function updateCandidateCardDimming() {
+      document.querySelectorAll(`.cand-card`).forEach(function (card) {
+        const c = card.dataset.cand;
+        card.classList.toggle(`is-dimmed`, appState.candFilter !== `all` && appState.candFilter !== c);
+      });
+    }
+
+    function updateStatusText() {
+      const el = document.getElementById(`filter-status-text`);
+      if (!el) return;
+      const candNames = {
+        all: `全部 3 位候選人`,
+        ho: `僅看 1號 何欣純`,
+        chiang: `僅看 3號 江啟臣`,
+        hung: `僅看 2號 洪麗華`
+      };
+      const topicNames = {
+        all: `所有政見面向`,
+        rail: `捷運軌道`,
+        road: `公路與公車`,
+        gateway: `機場與門戶`,
+        economy: `產業與財源`,
+        welfare: `社福・安全・人口`
+      };
+      const qStr = appState.searchQuery.trim()
+        ? `｜關鍵字：「${appState.searchQuery.trim()}」`
+        : ``;
+      el.textContent = `目前顯示：${candNames[appState.candFilter]}・${topicNames[appState.topicFilter]}${qStr}`;
+    }
+
+    function setCandidateFilter(candKey) {
+      appState.candFilter = candKey;
+      document.querySelectorAll(`[data-filter-cand]`).forEach(function (btn) {
+        btn.classList.toggle(`is-active`, btn.dataset.filterCand === candKey);
+      });
+      updateCandidateCardDimming();
+      selectCorridor(appState.activeCorridor);
+      renderMatrix();
+      renderPlatformCards();
+      selectQaRound(appState.activeQaRound);
+      updateStatusText();
+    }
+
+    function setTopicFilter(topicKey) {
+      appState.topicFilter = topicKey;
+      document.querySelectorAll(`[data-filter-topic]`).forEach(function (btn) {
+        btn.classList.toggle(`is-active`, btn.dataset.filterTopic === topicKey);
+      });
+      renderMatrix();
+      renderPlatformCards();
+      updateStatusText();
+    }
+
+    function setSearchQuery(val) {
+      appState.searchQuery = val || ``;
+      renderMatrix();
+      renderPlatformCards();
+      updateStatusText();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById(`policy-search`);
+      if (input) input.value = ``;
+      setSearchQuery(``);
+    }
+
+    function toggleDiffHighlight() {
+      appState.diffHighlight = !appState.diffHighlight;
+      const btn = document.getElementById(`diff-toggle-btn`);
+      if (btn) {
+        btn.classList.toggle(`is-active`, appState.diffHighlight);
+        btn.setAttribute(`aria-pressed`, appState.diffHighlight ? `true` : `false`);
+      }
+      renderMatrix();
+    }
+
+    function resetAllFilters() {
+      const input = document.getElementById(`policy-search`);
+      if (input) input.value = ``;
+      appState.searchQuery = ``;
+      appState.diffHighlight = false;
+      const diffBtn = document.getElementById(`diff-toggle-btn`);
+      if (diffBtn) {
+        diffBtn.classList.remove(`is-active`);
+        diffBtn.setAttribute(`aria-pressed`, `false`);
+      }
+      setCandidateFilter(`all`);
+      setTopicFilter(`all`);
+    }
+
+    // =========================================================
+    // 9. Chart.js Visualizations (Grounded Data, Token Colors)
+    // =========================================================
+    function initRadarChart() {
+      const canvas = document.getElementById(`radarChart`);
+      if (!canvas || typeof Chart === `undefined`) return;
+
+      const cHo = getToken(`--data-3`);
+      const cChiang = getToken(`--data-1`);
+      const cHung = getToken(`--data-2`);
+      const ink = getToken(`--on-surface`);
+      const gridColor = getToken(`--outline-variant`);
+
+      if (radarChartInstance) radarChartInstance.destroy();
+
+      radarChartInstance = new Chart(canvas, {
+        type: `radar`,
+        data: {
+          labels: [
+            `捷運與軌道建設`,
+            `公車・生活圈・快速道`,
+            `國際機場與會展門戶`,
+            `智慧產業轉型`,
+            `社福育兒與人口對策`,
+            `公安衛生與永續水資源`
+          ],
+          datasets: [
+            {
+              label: `1號 何欣純`,
+              data: [5, 5, 5, 4, 5, 3],
+              borderColor: cHo,
+              backgroundColor: `rgba(43, 110, 82, 0.14)`,
+              borderWidth: 2.5,
+              pointBackgroundColor: cHo
+            },
+            {
+              label: `3號 江啟臣`,
+              data: [4, 5, 4, 5, 4, 5],
+              borderColor: cChiang,
+              backgroundColor: `rgba(31, 78, 95, 0.14)`,
+              borderWidth: 2.5,
+              pointBackgroundColor: cChiang
+            },
+            {
+              label: `2號 洪麗華`,
+              data: [2, 1, 1, 2, 5, 4],
+              borderColor: cHung,
+              backgroundColor: `rgba(217, 144, 0, 0.14)`,
+              borderWidth: 2.5,
+              pointBackgroundColor: cHung
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              min: 0,
+              max: 5,
+              ticks: {
+                stepSize: 1,
+                backdropColor: `transparent`,
+                color: ink
+              },
+              grid: { color: gridColor },
+              angleLines: { color: gridColor },
+              pointLabels: {
+                color: ink,
+                font: { size: 12, weight: `600` }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: `bottom`,
+              labels: { color: ink, boxWidth: 14, padding: 14 }
+            }
+          }
+        }
+      });
+    }
+
+    function switchBarChart(mode) {
+      appState.activeBarMode = mode;
+      document.querySelectorAll(`[data-chart-mode]`).forEach(function (btn) {
+        btn.classList.toggle(`is-active`, btn.dataset.chartMode === mode);
+      });
+
+      const canvas = document.getElementById(`barChart`);
+      const titleEl = document.getElementById(`bar-chart-title`);
+      const subEl = document.getElementById(`bar-chart-sub`);
+      const noteEl = document.getElementById(`bar-chart-note`);
+      if (!canvas || typeof Chart === `undefined`) return;
+
+      const cHo = getToken(`--data-3`);
+      const cChiang = getToken(`--data-1`);
+      const cHung = getToken(`--data-2`);
+      const cContext = getToken(`--data-context`);
+      const ink = getToken(`--on-surface`);
+      const gridColor = getToken(`--outline-variant`);
+
+      if (barChartInstance) barChartInstance.destroy();
+
+      if (mode === `budget`) {
+        if (titleEl) titleEl.textContent = `辯論會提及之交通與市政關鍵金額（億元）`;
+        if (subEl) subEl.textContent = `依候選人於辯論會現場明確陳述之預算／經費數字對照`;
+        if (noteEl) noteEl.textContent = `數據來源皆出自候選人逐字稿口述：何欣純引述藍線 900→1,600+ 億及 1,300 億缺口；江啟臣引述東豐快／國4近 500 億、公車年補貼 26–27 億與免費增額 0.65 億、校舍每年增編 10 億。`;
+
+        barChartInstance = new Chart(canvas, {
+          type: `bar`,
+          data: {
+            labels: [
+              `藍線現行預算（盧時期｜何引述）`,
+              `藍線仍存缺口（議會質詢｜何引述）`,
+              `藍線早期規劃（林時期｜何引述）`,
+              `國4豐潭＋東豐快建設（江爭取）`,
+              `公車現行年補貼（江引述 26–27億）`,
+              `老舊校舍年增預算（江承諾）`,
+              `公車全面免費增額（江估 6–7千萬）`
+            ],
+            datasets: [
+              {
+                label: `金額（新臺幣億元）`,
+                data: [1600, 1300, 900, 500, 26.5, 10, 0.65],
+                backgroundColor: [cContext, cHo, cContext, cChiang, cChiang, cChiang, cChiang],
+                borderRadius: 2
+              }
+            ]
+          },
+          options: {
+            indexAxis: `y`,
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: { color: gridColor },
+                ticks: { color: ink }
+              },
+              y: {
+                grid: { display: false },
+                ticks: { color: ink, font: { size: 11 } }
+              }
+            },
+            plugins: {
+              legend: { display: false }
+            }
+          }
+        });
+      } else {
+        if (titleEl) titleEl.textContent = `辯論會提及之人口衝擊與場館目標規模（千人／戶）`;
+        if (subEl) subEl.textContent = `對照候選人引述之少子化退休潮、社宅目標與大型場館容量（單位：千）`;
+        if (noteEl) noteEl.textContent = `數據來源：洪麗華引述 8 年需補 27 萬人力、臺中退休 11 萬人、臺中今年小學生僅 8 千人；江啟臣提出超巨蛋 5 萬人願景、社宅 1.8 萬戶；何欣純提及新建巨蛋約 1.6 萬席。`;
+
+        barChartInstance = new Chart(canvas, {
+          type: `bar`,
+          data: {
+            labels: [
+              `8年須補足人力缺口（洪引述 27萬）`,
+              `臺中面臨退休人口（洪引述 11萬）`,
+              `超巨蛋滿場願景（江提 5萬人）`,
+              `社會住宅蓋滿目標（江提 1.8萬戶）`,
+              `新建臺中巨蛋容量（何提 1.6萬人）`,
+              `臺中今年小學生數（洪引述 8千人）`
+            ],
+            datasets: [
+              {
+                label: `規模（千人／千戶）`,
+                data: [270, 110, 50, 18, 16, 8],
+                backgroundColor: [cHung, cHung, cChiang, cChiang, cHo, cHung],
+                borderRadius: 2
+              }
+            ]
+          },
+          options: {
+            indexAxis: `y`,
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: { color: gridColor },
+                ticks: { color: ink }
+              },
+              y: {
+                grid: { display: false },
+                ticks: { color: ink, font: { size: 11 } }
+              }
+            },
+            plugins: {
+              legend: { display: false }
+            }
+          }
+        });
+      }
+    }
+
+    // =========================================================
+    // 10. Initialization
+    // =========================================================
+    document.addEventListener(`DOMContentLoaded`, function () {
+      if (typeof lucide !== `undefined` && lucide.createIcons) {
+        lucide.createIcons();
+      }
+      selectCorridor(`blue`);
+      renderMatrix();
+      renderPlatformCards();
+      selectQaRound(`round1`);
+      updateStatusText();
+      initRadarChart();
+      switchBarChart(`budget`);
+    });
+  </script>
+</body>
+</html>
